@@ -6,7 +6,7 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="text-foreground/80 mx-auto max-w-[1200px] px-4 py-32"
+      className="text-foreground/80 mx-auto max-w-[1200px] overflow-clip px-4 py-32"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ export const Contact = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="glass space-y-8 rounded-2xl p-8"
+            className="glass space-y-8 rounded-2xl py-8"
           >
             <div className="space-y-2">
               <p className="text-primary/80 text-lg">Phone</p>

@@ -67,7 +67,7 @@ export const Stack = () => {
   }, [controls, inView]);
 
   return (
-    <section id="stack">
+    <section id="stack" className="overflow-x-hidden">
       <div className="mx-auto max-w-[250px] text-center">
         <h2 className="text-foreground/80 mb-10 text-7xl font-bold">
           My Stack

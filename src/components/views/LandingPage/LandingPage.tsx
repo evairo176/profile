@@ -7,6 +7,7 @@ import KeyMetrics from "./KeyMetrics";
 import Stack from "./Stack";
 import Services from "./Services";
 import Contact from "./Contact";
+import Footer from "./Footer";
 
 const LandingPage = () => {
   return (
@@ -19,6 +20,7 @@ const LandingPage = () => {
       <KeyMetrics />
       <Services />
       <Contact />
+      <Footer />
     </div>
   );
 };

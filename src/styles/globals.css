@@ -4,36 +4,36 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1.0000 0 0);
+  --background: oklch(1 0 0);
   --foreground: oklch(0.2101 0.0318 264.6645);
-  --card: oklch(1.0000 0 0);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.2101 0.0318 264.6645);
-  --popover: oklch(1.0000 0 0);
+  --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2101 0.0318 264.6645);
   --primary: oklch(0.2101 0.0318 264.6645);
-  --primary-foreground: oklch(1.0000 0 0);
-  --secondary: oklch(0.9670 0.0029 264.5419);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.967 0.0029 264.5419);
   --secondary-foreground: oklch(0.2101 0.0318 264.6645);
   --muted: oklch(0.9846 0.0017 247.8389);
-  --muted-foreground: oklch(0.5510 0.0234 264.3637);
-  --accent: oklch(0.9670 0.0029 264.5419);
+  --muted-foreground: oklch(0.551 0.0234 264.3637);
+  --accent: oklch(0.967 0.0029 264.5419);
   --accent-foreground: oklch(0.2101 0.0318 264.6645);
   --destructive: oklch(0.6368 0.2078 25.3313);
-  --destructive-foreground: oklch(1.0000 0 0);
+  --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.9276 0.0058 264.5313);
   --input: oklch(0.9276 0.0058 264.5313);
   --ring: oklch(0.7137 0.0192 261.3246);
   --chart-1: oklch(0.2101 0.0318 264.6645);
   --chart-2: oklch(0.4461 0.0263 256.8018);
-  --chart-3: oklch(0.5510 0.0234 264.3637);
+  --chart-3: oklch(0.551 0.0234 264.3637);
   --chart-4: oklch(0.7137 0.0192 261.3246);
   --chart-5: oklch(0.8717 0.0093 258.3382);
   --sidebar: oklch(0.9851 0 0);
   --sidebar-foreground: oklch(0.2101 0.0318 264.6645);
   --sidebar-primary: oklch(0.2101 0.0318 264.6645);
-  --sidebar-primary-foreground: oklch(1.0000 0 0);
+  --sidebar-primary-foreground: oklch(1 0 0);
   --sidebar-accent: oklch(0.2101 0.0318 264.6645);
-  --sidebar-accent-foreground: oklch(1.0000 0 0);
+  --sidebar-accent-foreground: oklch(1 0 0);
   --sidebar-border: oklch(0.9276 0.0058 264.5313);
   --sidebar-ring: oklch(0.7137 0.0192 261.3246);
   --font-sans: Geist Sans;
@@ -42,57 +42,62 @@
   --radius: 0.5rem;
   --shadow-2xs: 0px 2px 4px 0px hsl(0 0% 0% / 0.03);
   --shadow-xs: 0px 2px 4px 0px hsl(0 0% 0% / 0.03);
-  --shadow-sm: 0px 2px 4px 0px hsl(0 0% 0% / 0.05), 0px 1px 2px -1px hsl(0 0% 0% / 0.05);
-  --shadow: 0px 2px 4px 0px hsl(0 0% 0% / 0.05), 0px 1px 2px -1px hsl(0 0% 0% / 0.05);
-  --shadow-md: 0px 2px 4px 0px hsl(0 0% 0% / 0.05), 0px 2px 4px -1px hsl(0 0% 0% / 0.05);
-  --shadow-lg: 0px 2px 4px 0px hsl(0 0% 0% / 0.05), 0px 4px 6px -1px hsl(0 0% 0% / 0.05);
-  --shadow-xl: 0px 2px 4px 0px hsl(0 0% 0% / 0.05), 0px 8px 10px -1px hsl(0 0% 0% / 0.05);
+  --shadow-sm:
+    0px 2px 4px 0px hsl(0 0% 0% / 0.05), 0px 1px 2px -1px hsl(0 0% 0% / 0.05);
+  --shadow:
+    0px 2px 4px 0px hsl(0 0% 0% / 0.05), 0px 1px 2px -1px hsl(0 0% 0% / 0.05);
+  --shadow-md:
+    0px 2px 4px 0px hsl(0 0% 0% / 0.05), 0px 2px 4px -1px hsl(0 0% 0% / 0.05);
+  --shadow-lg:
+    0px 2px 4px 0px hsl(0 0% 0% / 0.05), 0px 4px 6px -1px hsl(0 0% 0% / 0.05);
+  --shadow-xl:
+    0px 2px 4px 0px hsl(0 0% 0% / 0.05), 0px 8px 10px -1px hsl(0 0% 0% / 0.05);
   --shadow-2xl: 0px 2px 4px 0px hsl(0 0% 0% / 0.13);
   --tracking-normal: 0rem;
   --spacing: 0.25rem;
 
-  --gradient-start: 0 0% 100%;    /* contoh light: putih */
+  --gradient-start: 0 0% 100%; /* contoh light: putih */
   --gradient-mid1: 280 20% 96%;
   --gradient-mid2: 270 25% 90%;
   --gradient-end: 260 30% 85%;
 
   --hero-radial-start: 0 0% 100%; /* start = background */
-  --hero-radial-end: 260 30% 85%;      /* end = primary   */
-  --hero-border: 280 20% 96%;          /* border = primary */
+  --hero-radial-end: 260 30% 85%; /* end = primary   */
+  --hero-border: 280 20% 96%; /* border = primary */
 }
 
 .dark {
   --background: oklch(0 0 0);
-  --foreground: oklch(0.9173 0.0310 304.2522);
+  --foreground: oklch(0.9173 0.031 304.2522);
   --card: oklch(0.1637 0.0375 297.4727);
-  --card-foreground: oklch(0.9173 0.0310 304.2522);
+  --card-foreground: oklch(0.9173 0.031 304.2522);
   --popover: oklch(0.1637 0.0375 297.4727);
-  --popover-foreground: oklch(0.9173 0.0310 304.2522);
+  --popover-foreground: oklch(0.9173 0.031 304.2522);
   --primary: oklch(0.7325 0.1324 302.7025);
   --primary-foreground: oklch(0 0 0);
   --secondary: oklch(0.1637 0.0375 297.4727);
-  --secondary-foreground: oklch(0.9173 0.0310 304.2522);
+  --secondary-foreground: oklch(0.9173 0.031 304.2522);
   --muted: oklch(0.1637 0.0375 297.4727);
-  --muted-foreground: oklch(0.7027 0.0462 301.3940);
-  --accent: oklch(0.2561 0.0950 315.9620);
-  --accent-foreground: oklch(0.9173 0.0310 304.2522);
-  --destructive: oklch(0.3958 0.1331 25.7230);
+  --muted-foreground: oklch(0.7027 0.0462 301.394);
+  --accent: oklch(0.2561 0.095 315.962);
+  --accent-foreground: oklch(0.9173 0.031 304.2522);
+  --destructive: oklch(0.3958 0.1331 25.723);
   --destructive-foreground: oklch(0.9846 0.0017 247.8389);
-  --border: oklch(0.2561 0.0950 315.9620);
-  --input: oklch(0.2561 0.0950 315.9620);
+  --border: oklch(0.2561 0.095 315.962);
+  --input: oklch(0.2561 0.095 315.962);
   --ring: oklch(0.7325 0.1324 302.7025);
   --chart-1: oklch(0.7325 0.1324 302.7025);
-  --chart-2: oklch(0.5687 0.1927 313.4340);
+  --chart-2: oklch(0.5687 0.1927 313.434);
   --chart-3: oklch(0.5062 0.1699 316.6304);
-  --chart-4: oklch(0.2561 0.0950 315.9620);
-  --chart-5: oklch(0.7172 0.1267 310.8880);
+  --chart-4: oklch(0.2561 0.095 315.962);
+  --chart-5: oklch(0.7172 0.1267 310.888);
   --sidebar: oklch(0 0 0);
-  --sidebar-foreground: oklch(0.9173 0.0310 304.2522);
+  --sidebar-foreground: oklch(0.9173 0.031 304.2522);
   --sidebar-primary: oklch(0.7325 0.1324 302.7025);
   --sidebar-primary-foreground: oklch(0 0 0);
   --sidebar-accent: oklch(0.7325 0.1324 302.7025);
   --sidebar-accent-foreground: oklch(0 0 0);
-  --sidebar-border: oklch(0.2561 0.0950 315.9620);
+  --sidebar-border: oklch(0.2561 0.095 315.962);
   --sidebar-ring: oklch(0.7325 0.1324 302.7025);
   --font-sans: Geist Sans;
   --font-serif: Lora;
@@ -100,22 +105,27 @@
   --radius: 0.75rem;
   --shadow-2xs: 0px 2px 4px 0px hsl(0 0% 0% / 0.05);
   --shadow-xs: 0px 2px 4px 0px hsl(0 0% 0% / 0.05);
-  --shadow-sm: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 1px 2px -1px hsl(0 0% 0% / 0.10);
-  --shadow: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 1px 2px -1px hsl(0 0% 0% / 0.10);
-  --shadow-md: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 2px 4px -1px hsl(0 0% 0% / 0.10);
-  --shadow-lg: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 4px 6px -1px hsl(0 0% 0% / 0.10);
-  --shadow-xl: 0px 2px 4px 0px hsl(0 0% 0% / 0.10), 0px 8px 10px -1px hsl(0 0% 0% / 0.10);
+  --shadow-sm:
+    0px 2px 4px 0px hsl(0 0% 0% / 0.1), 0px 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow:
+    0px 2px 4px 0px hsl(0 0% 0% / 0.1), 0px 1px 2px -1px hsl(0 0% 0% / 0.1);
+  --shadow-md:
+    0px 2px 4px 0px hsl(0 0% 0% / 0.1), 0px 2px 4px -1px hsl(0 0% 0% / 0.1);
+  --shadow-lg:
+    0px 2px 4px 0px hsl(0 0% 0% / 0.1), 0px 4px 6px -1px hsl(0 0% 0% / 0.1);
+  --shadow-xl:
+    0px 2px 4px 0px hsl(0 0% 0% / 0.1), 0px 8px 10px -1px hsl(0 0% 0% / 0.1);
   --shadow-2xl: 0px 2px 4px 0px hsl(0 0% 0% / 0.25);
 
-  --gradient-start: 0 0% 0%;      /* #000000 */
-    --gradient-mid1: 284 62% 16%;   /* #340F41 */
-    --gradient-mid2: 285 46% 44%;   /* #8A3DA4 */
-    --gradient-end: 265 71% 75%;    /* #B993ED */
-    /* shadcn sudah punya --foreground untuk teks di dark mode */
+  --gradient-start: 0 0% 0%; /* #000000 */
+  --gradient-mid1: 284 62% 16%; /* #340F41 */
+  --gradient-mid2: 285 46% 44%; /* #8A3DA4 */
+  --gradient-end: 265 71% 75%; /* #B993ED */
+  /* shadcn sudah punya --foreground untuk teks di dark mode */
 
-    --hero-radial-start: 0 0% 0%;      /* #000000 */
-    --hero-radial-end: 284 48% 53%;    /* #9E4AC5 */
-    --hero-border: 284 50% 71%;        /* #BD8CDE */
+  --hero-radial-start: 0 0% 0%; /* #000000 */
+  --hero-radial-end: 284 48% 53%; /* #9E4AC5 */
+  --hero-border: 284 50% 71%; /* #BD8CDE */
 }
 
 @theme inline {
@@ -181,6 +191,16 @@
 body {
   letter-spacing: var(--tracking-normal);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -204,7 +224,7 @@ body {
     background-image: radial-gradient(
       closest-side,
       /* opacity beda untuk start/end agar mirip contohmu */
-      hsl(var(--hero-radial-start) / 0.9) 85%,
+        hsl(var(--hero-radial-start) / 0.9) 85%,
       hsl(var(--hero-radial-end) / 1)
     );
   }

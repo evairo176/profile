@@ -1,6 +1,6 @@
 import PageHead from "@/components/commons/PageHead";
 import React, { ReactNode } from "react";
-// import Navbar from "./Navbar";
+import Navbar from "./Navbar";
 
 type Props = {
   title: string;
@@ -12,7 +12,7 @@ const LandingPageLayout = ({ title, children }: Props) => {
     <>
       <PageHead title={title} />
       {/* navbar  */}
-      {/* <Navbar /> */}
+      <Navbar />
       {/* main  */}
       {children}
       {/* <Footer /> */}

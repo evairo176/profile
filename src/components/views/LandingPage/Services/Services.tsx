@@ -39,14 +39,17 @@ export const Services = () => {
   ];
 
   return (
-    <div className="text-foreground/80 container mx-auto flex flex-col py-20 md:flex-row">
+    <div className="text-foreground/80 container mx-auto flex flex-col px-4 py-20 md:flex-row">
       <div className="w-1/4 pr-8">
         <h2 className="sticky top-20 text-6xl font-extrabold">SERVICES</h2>
       </div>
 
-      <div className="w-3/4">
+      <div className="mt-3 w-3/4">
         {services.map((service) => (
-          <div key={service.id} className="mb-16 flex items-start">
+          <div
+            key={service.id}
+            className="mb-16 flex flex-col items-start md:flex-row"
+          >
             <div className="text-primary mr-6 text-5xl font-bold">
               {service.id}
             </div>
