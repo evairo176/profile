@@ -3,13 +3,21 @@ import React from "react";
 import { motion } from "framer-motion";
 import profilepic from "/public/assets/profilepic.png";
 import Image from "next/image";
+import ModeToggle from "@/components/commons/ModeToggle";
 
 const Hero = () => {
   return (
-    <div className="relative overflow-clip min-h-screen text-white bg-[linear-gradient(to_bottom,#000,#340F41_35%,#8A3DA4_55%,#B993ED_85%)]">
+    <div
+      className="relative overflow-clip min-h-screen bg-hero-gradient text-foreground 
+    dark:bg-[linear-gradient(to_bottom,hsl(var(--gradient-start)),hsl(var(--gradient-mid1))_35%,hsl(var(--gradient-mid2))_55%,hsl(var(--gradient-end))_85%)] dark:text-foreground"
+    >
       <div
-        className="absolute bg-black w-[2400px] h-[1000px] rounded-[50%] left-1/2 -translate-x-1/2
-                        bg-[radial-gradient(closest-side,#000_85%,#9E4AC5)] top-[450px] border-[1px] border-[#BD8CDE]/30"
+        className="    absolute
+    bg-background
+    w-[2400px] h-[1000px] rounded-[50%]
+    left-1/2 -translate-x-1/2 top-[450px]
+    bg-hero-radial
+    border border-hero"
       />
 
       <div className="container relative mx-auto px-4 pt-12 pb-24">
@@ -20,12 +28,15 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="relative mb-8 mt-24"
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-purple-500/40 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/40 to-transparent rounded-full blur-3xl"></div>
             <Image
               src={profilepic}
               alt="profile pic"
               className="w-[250px] relative z-10"
             />
+            <div className="absolute top-2 right-2 z-20">
+              <ModeToggle />
+            </div>
           </motion.div>
 
           <motion.div
@@ -34,11 +45,11 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <h1 className="text-6xl md:text-7xl font-bold text-white/80 max-w-lg mx-auto tracking-tighter mb-6">
+            <h1 className="text-6xl md:text-7xl font-bold text-foreground/80 max-w-lg mx-auto tracking-tighter mb-6">
               Hi, I am <br /> Dicki{" "}
-              <span className="text-purple-300">Prasetya</span>
+              <span className="text-primary">Prasetya</span>
             </h1>
-            <p className="text-xl text-white/80 max-w-lg mx-auto leading-relaxed mb-6">
+            <p className="text-xl text-muted-foreground max-w-lg mx-auto leading-relaxed mb-6">
               I am a fullstack developer focusing on creating websites that
               provides user with best experience
             </p>
@@ -46,13 +57,13 @@ const Hero = () => {
             <div className="flex gap-4 justify-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
-                className="px-6 py-3 font-bold bg-gradient-to-r from-purple-700 to-purple-500 rounded-full hover:bg-purple-700 transition-colors"
+                className="px-6 py-3 font-bold bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors"
               >
                 Contact Me
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
-                className="px-6 py-3 border border-purple-400/20 rounded-full font-bold hover:bg-purple-700 transition-colors"
+                className="px-6 py-3 border border-border rounded-full font-bold hover:bg-accent hover:text-accent-foreground transition-colors"
               >
                 View Work
               </motion.button>
