@@ -1,4 +1,5 @@
 import React from "react";
+import { GetStaticProps } from "next";
 
 import LandingPageLayout from "@/components/layouts/LandingPageLayout";
 import LandingPage from "@/components/views/LandingPage";
@@ -12,3 +13,11 @@ export default function HomePage() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      messages: (await import(`../../messages/${locale}.json`)).default,
+    },
+  };
+};

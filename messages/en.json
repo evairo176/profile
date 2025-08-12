@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "greeting": "Hi, I am",
+    "name": "Dicki Prasetya",
+    "description": "I am a fullstack developer focusing on creating websites that provides user with best experience",
+    "contactButton": "Contact Me",
+    "viewWorkButton": "View Work"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Learn more about my background and skills",
+    "background": {
+      "title": "Background",
+      "description": "I'm a passionate full-stack developer with a strong foundation in computer science and a love for creating innovative web solutions. My journey has been driven by curiosity, a commitment to clean and efficient code, and the excitement of turning complex problems into intuitive, user-friendly experiences."
+    },
+    "expertise": {
+      "title": "Expertise",
+      "description": "I specialize in building robust and scalable web applications using modern technologies, ensuring seamless performance, intuitive user experiences, and clean, maintainable code that stands the test of time."
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "I'm proficient in a wide range of technologies and constantly expanding my skill set to stay at the forefront of web development.",
+      "frontend": "Frontend",
+      "backend": "Backend"
+    },
+    "approach": {
+      "title": "Approach",
+      "description": "I believe in writing clean, maintainable code and following best practices. My approach involves understanding client needs, planning thoroughly, and delivering high-quality solutions on time."
+    },
+    "goals": {
+      "title": "Goals",
+      "description": "My goal is to continue growing as a developer, tackling challenging projects, and contributing to the tech community. I'm always excited to learn new technologies and push the boundaries of what's possible in web development."
+    }
+  }
+}

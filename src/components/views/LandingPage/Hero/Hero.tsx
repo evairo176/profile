@@ -3,8 +3,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import profilepic from "/public/assets/profilepic.png";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Hero = () => {
+  const t = useTranslations("hero");
   return (
     <div className="bg-hero-gradient text-foreground dark:text-foreground relative min-h-screen overflow-clip dark:bg-[linear-gradient(to_bottom,hsl(var(--gradient-start)),hsl(var(--gradient-mid1))_35%,hsl(var(--gradient-mid2))_55%,hsl(var(--gradient-end))_85%)]">
       <div className="bg-background bg-hero-radial border-hero absolute top-[450px] left-1/2 h-[1000px] w-[2400px] -translate-x-1/2 rounded-[50%] border" />
@@ -32,12 +34,11 @@ const Hero = () => {
             className="max-w-2xl"
           >
             <h1 className="text-foreground/80 mx-auto mb-6 max-w-lg text-6xl font-bold tracking-tighter md:text-7xl">
-              Hi, I am <br /> Dicki{" "}
-              <span className="text-primary">Prasetya</span>
+              {t("greeting")} <br /> {t("name").split(" ")[0]}{" "}
+              <span className="text-primary">{t("name").split(" ")[1]}</span>
             </h1>
             <p className="text-muted-foreground mx-auto mb-6 max-w-lg text-xl leading-relaxed">
-              I am a fullstack developer focusing on creating websites that
-              provides user with best experience
+              {t("description")}
             </p>
 
             <div className="flex justify-center gap-4">
@@ -45,13 +46,13 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 py-3 font-bold transition-colors"
               >
-                Contact Me
+                {t("contactButton")}
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 className="border-border hover:bg-accent hover:text-accent-foreground rounded-full border px-6 py-3 font-bold transition-colors"
               >
-                View Work
+                {t("viewWorkButton")}
               </motion.button>
             </div>
           </motion.div>

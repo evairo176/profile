@@ -234,3 +234,274 @@ html {
     border-color: hsl(var(--hero-border) / 0.3);
   }
 }
+
+/* ===== SMOOTH THEME TRANSITION ANIMATIONS ===== */
+/* Inspired by tweakcn.com smooth theme switching */
+
+/* Global smooth transitions for all elements */
+* {
+  transition: 
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    fill 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    backdrop-filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Disable transitions for interactive elements to maintain responsiveness */
+*:focus,
+*:focus-visible,
+*:active,
+input,
+textarea,
+select,
+button:active {
+  transition: none !important;
+}
+
+/* Enhanced theme transition for root elements */
+html {
+  transition: 
+    background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    color-scheme 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  transition: 
+    background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth gradient transitions for Hero section */
+.bg-hero-gradient {
+  transition: 
+    background-image 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bg-hero-radial {
+  transition: 
+    background-image 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.border-hero {
+  transition: 
+    border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth transitions for all gradient backgrounds */
+[class*="bg-gradient"] {
+  transition: 
+    background-image 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card and surface smooth transitions */
+[class*="bg-card"],
+[class*="bg-background"],
+[class*="bg-muted"],
+[class*="bg-accent"],
+[class*="bg-primary"],
+[class*="bg-secondary"] {
+  transition: 
+    background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Text color smooth transitions */
+[class*="text-foreground"],
+[class*="text-muted"],
+[class*="text-primary"],
+[class*="text-secondary"] {
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Border smooth transitions */
+[class*="border-border"],
+[class*="border-primary"],
+[class*="border-muted"] {
+  transition: border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Backdrop blur transitions for glassmorphism effects */
+[class*="backdrop-blur"] {
+  transition: backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Special animation for theme toggle button */
+@keyframes theme-switch-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.theme-switching {
+  animation: theme-switch-pulse 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth page transition effect */
+@keyframes page-theme-transition {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.theme-transition-active {
+  animation: page-theme-transition 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced shadow transitions */
+[class*="shadow"] {
+  transition: 
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth transitions for Framer Motion elements */
+[data-framer-component] {
+  transition: 
+    background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}/* ====
+= CIRCLE EXPAND THEME TRANSITION (tweakcn.com style) ===== */
+
+/* Circle overlay animation */
+.theme-circle-overlay {
+  will-change: width, height, opacity;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Disable all other transitions during circle animation */
+.theme-circle-transition * {
+  transition: none !important;
+}
+
+/* Re-enable transitions after circle animation */
+.theme-circle-transition.theme-circle-complete * {
+  transition: 
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Enhanced theme switching button animation */
+.theme-switching {
+  animation: theme-switch-pulse 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+/* Smooth button press effect */
+@keyframes theme-switch-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+  }
+  50% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 8px hsl(var(--primary) / 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0);
+  }
+}
+
+/* Prevent layout shift during transition */
+.theme-transitioning {
+  overflow: hidden;
+}
+
+/* Smooth reveal animation for content after theme change */
+@keyframes content-reveal {
+  0% {
+    opacity: 0.8;
+    transform: translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.theme-circle-transition .theme-content {
+  animation: content-reveal 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+
+/* Enhanced circle animation with better easing */
+.theme-circle-overlay.expanding {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.theme-circle-overlay.contracting {
+  transition: all 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19) !important;
+}
+
+/* Subtle glow effect during transition */
+.theme-switching::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, 
+    hsl(var(--primary) / 0.1), 
+    hsl(var(--primary) / 0.3), 
+    hsl(var(--primary) / 0.1)
+  );
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.theme-switching::before {
+  opacity: 1;
+}
+
+/* Smooth icon transitions during circle animation */
+.theme-circle-transition .lucide {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Prevent text selection during animation */
+.theme-transitioning {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Optimize performance during animation */
+.theme-circle-overlay {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}

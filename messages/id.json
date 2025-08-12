@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "greeting": "Halo, Saya",
+    "name": "Dicki Prasetya",
+    "description": "Saya adalah seorang fullstack developer yang fokus pada pembuatan website yang memberikan pengalaman terbaik bagi pengguna",
+    "contactButton": "Hubungi Saya",
+    "viewWorkButton": "Lihat Karya"
+  },
+  "navigation": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "projects": "Proyek",
+    "contact": "Kontak"
+  },
+  "about": {
+    "title": "Tentang Saya",
+    "description": "Pelajari lebih lanjut tentang latar belakang dan keahlian saya",
+    "background": {
+      "title": "Latar Belakang",
+      "description": "Saya adalah seorang full-stack developer yang bersemangat dengan fondasi yang kuat dalam ilmu komputer dan kecintaan untuk menciptakan solusi web yang inovatif. Perjalanan saya didorong oleh rasa ingin tahu, komitmen terhadap kode yang bersih dan efisien, serta kegembiraan mengubah masalah kompleks menjadi pengalaman yang intuitif dan ramah pengguna."
+    },
+    "expertise": {
+      "title": "Keahlian",
+      "description": "Saya mengkhususkan diri dalam membangun aplikasi web yang robust dan scalable menggunakan teknologi modern, memastikan performa yang mulus, pengalaman pengguna yang intuitif, dan kode yang bersih serta mudah dipelihara yang tahan lama."
+    },
+    "skills": {
+      "title": "Keahlian",
+      "description": "Saya mahir dalam berbagai teknologi dan terus memperluas keahlian saya untuk tetap berada di garis depan pengembangan web.",
+      "frontend": "Frontend",
+      "backend": "Backend"
+    },
+    "approach": {
+      "title": "Pendekatan",
+      "description": "Saya percaya pada penulisan kode yang bersih dan mudah dipelihara serta mengikuti praktik terbaik. Pendekatan saya melibatkan pemahaman kebutuhan klien, perencanaan yang menyeluruh, dan memberikan solusi berkualitas tinggi tepat waktu."
+    },
+    "goals": {
+      "title": "Tujuan",
+      "description": "Tujuan saya adalah terus berkembang sebagai developer, menangani proyek-proyek yang menantang, dan berkontribusi pada komunitas teknologi. Saya selalu bersemangat untuk mempelajari teknologi baru dan mendorong batas-batas dari apa yang mungkin dalam pengembangan web."
+    }
+  }
+}

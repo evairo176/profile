@@ -3,6 +3,7 @@ import React from "react";
 import project1 from "/public/assets/proj5.png";
 import project2 from "/public/assets/proj6.png";
 import { Progress } from "@/components/ui/progress";
+import { useTranslations } from "next-intl";
 
 const skills = [
   "Laravel",
@@ -36,18 +37,23 @@ const skills = [
 ];
 
 const About = () => {
+  const t = useTranslations("about");
+
   return (
     <section id="about" className="px-4 py-8">
       <h2 className="text-foreground/80 mb-8 text-6xl font-bold">
-        About <span className="text-primary">Me</span>
+        {t("background.title").split(" ")[0]}{" "}
+        <span className="text-primary">
+          {t("background.title").split(" ")[1] || "Me"}
+        </span>
       </h2>
       <div className="grid gap-8 md:grid-cols-3">
         <div className="border-border/80 rounded-lg border p-6">
           <h3 className="text-foreground/80 mb-2 text-2xl font-bold">
-            01. Background
+            01. {t("background.title")}
           </h3>
           <p className="text-foreground/60 mb-6">
-            {`I'm a passionate full-stack developer with a strong foundation in computer science and a love for creating innovative web solutions. My journey has been driven by curiosity, a commitment to clean and efficient code, and the excitement of turning complex problems into intuitive, user-friendly experiences.`}
+            {t("background.description")}
           </p>
 
           <div className="border-border/80 mb-4 rounded-lg border p-4">
@@ -64,10 +70,10 @@ const About = () => {
         </div>
         <div className="border-border/80 rounded-lg border p-6">
           <h3 className="text-foreground/80 mb-2 text-2xl font-bold">
-            02. Expertise
+            02. {t("expertise.title")}
           </h3>
           <p className="text-foreground/60 mb-6">
-            {`I specialize in building robust and scalable web applications using modern technologies, ensuring seamless performance, intuitive user experiences, and clean, maintainable code that stands the test of time.`}
+            {t("expertise.description")}
           </p>
 
           <div className="border-border/80 relative mb-4 h-[220px] overflow-hidden rounded-lg border p-4">
@@ -83,14 +89,14 @@ const About = () => {
 
         <div className="border-border/80 rounded-lg border p-6">
           <h3 className="text-foreground/80 mb-2 text-2xl font-bold">
-            02. Skills
+            03. {t("skills.title")}
           </h3>
-          <p className="text-foreground/60 mb-6">
-            {`I'm proficient in a wide range of technologies and constantly expanding my skill set to stay at the forefront of web development.`}
-          </p>
+          <p className="text-foreground/60 mb-6">{t("skills.description")}</p>
           <div className="grid gap-4 text-center">
             <div className="border-border/80 mb-4 rounded-lg border p-4">
-              <h4 className="text-primary mb-2 font-medium">Frontend</h4>
+              <h4 className="text-primary mb-2 font-medium">
+                {t("skills.frontend")}
+              </h4>
               <ul className="text-foreground/60 space-y-1 text-sm">
                 <li>React</li>
                 <li>TypeScript</li>
@@ -99,7 +105,9 @@ const About = () => {
               </ul>
             </div>
             <div className="border-border/80 mb-4 rounded-lg border p-4">
-              <h4 className="text-primary mb-2 font-medium">Backend</h4>
+              <h4 className="text-primary mb-2 font-medium">
+                {t("skills.backend")}
+              </h4>
               <ul className="text-foreground/60 space-y-1 text-sm">
                 <li>Node.js</li>
                 <li>Python</li>
@@ -133,13 +141,9 @@ const About = () => {
             </div>
           </div>
           <h3 className="text-foreground/80 mt-4 mb-2 text-2xl font-bold">
-            04. Approach
+            04. {t("approach.title")}
           </h3>
-          <p className="text-foreground/60">
-            I believe in writing clean, maintainable code and following best
-            practices. My approach involves understanding client needs, planning
-            thoroughly, and delivering high-quality solutions on time.
-          </p>
+          <p className="text-foreground/60">{t("approach.description")}</p>
         </div>
         <div className="border-border/80 rounded-lg border p-6">
           <div className="border-border/80 relative h-[200px] overflow-hidden border p-4">
@@ -153,15 +157,9 @@ const About = () => {
           </div>
           <div>
             <h3 className="text-foreground/80 mt-2 mb-2 text-2xl font-bold">
-              05. Goals
+              05. {t("goals.title")}
             </h3>
-            <p className="text-foreground/60">
-              My goal is to continue growing as a developer, tackling
-              challenging projects, and contributing to the tech community.{" "}
-              {`I'm`}
-              always excited to learn new technologies and push the boundaries
-              of {`what's `}possible in web development.
-            </p>
+            <p className="text-foreground/60">{t("goals.description")}</p>
           </div>
         </div>
       </div>

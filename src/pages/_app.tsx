@@ -3,6 +3,8 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { DM_Sans } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { useRouter } from "next/router";
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
@@ -10,16 +12,23 @@ const dm_sans = DM_Sans({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
+    <NextIntlClientProvider
+      locale={router.locale}
+      messages={pageProps.messages}
     >
-      <main className={cn(dm_sans.className)}>
-        <Component {...pageProps} />
-      </main>
-    </ThemeProvider>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange={false}
+      >
+        <main className={cn(dm_sans.className)}>
+          <Component {...pageProps} />
+        </main>
+      </ThemeProvider>
+    </NextIntlClientProvider>
   );
 }
