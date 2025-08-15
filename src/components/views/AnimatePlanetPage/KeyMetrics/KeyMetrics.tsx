@@ -43,7 +43,7 @@ interface Metric {
   description: string;
 }
 
-export const KeyMetrics: React.FC = () => {
+const KeyMetrics: React.FC = () => {
   const ref = React.useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: false });
 
@@ -58,7 +58,7 @@ export const KeyMetrics: React.FC = () => {
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        className="text-foreground/80 mb-12 text-6xl font-bold"
+        className="mb-12 text-6xl font-bold"
       >
         KEY METRICS
       </motion.h2>
@@ -107,3 +107,5 @@ export const KeyMetrics: React.FC = () => {
     </motion.section>
   );
 };
+
+export default KeyMetrics;

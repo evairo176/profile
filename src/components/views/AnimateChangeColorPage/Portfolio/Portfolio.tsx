@@ -7,6 +7,7 @@ import placeholderImage2 from "/public/assets/proj6.png";
 import placeholderImage3 from "/public/assets/proj5.png";
 
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 
 const projects = [
   {
@@ -36,14 +37,21 @@ const projects = [
 ];
 
 const Portfolio = () => {
+  const { theme } = useTheme();
   const [selectedProject, setSelectedProject] = useState(projects[0]);
 
   return (
-    <motion.section className="text-foreground/80 py-32" id="portfolio">
+    <motion.section
+      className="bg-white py-32 text-gray-800 dark:bg-black dark:text-white"
+      id="portfolio"
+    >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 lg:grid-cols-2">
         <div>
           <h2 className="mb-10 text-6xl font-bold">
-            Selected <span className="text-primary">projects</span>
+            Selected{" "}
+            <span className="text-purple-600 dark:text-purple-300">
+              projects
+            </span>
           </h2>
           {projects.map((project) => (
             <div
@@ -51,20 +59,24 @@ const Portfolio = () => {
               onClick={() => setSelectedProject(project)}
               className="group mb-8 cursor-pointer"
             >
-              <p className="text-primary mb-2 text-lg">{project.year}</p>
+              <p className="mb-2 text-lg text-purple-600 dark:text-purple-300">
+                {project.year}
+              </p>
               <h3
-                className={`group-hover:text-primary text-3xl font-semibold transition-colors duration-300 ${
-                  selectedProject.id === project.id ? "text-primary/60" : ""
+                className={`text-3xl font-semibold transition-colors duration-300 group-hover:text-purple-500 dark:group-hover:text-purple-500 ${
+                  selectedProject.id === project.id
+                    ? "text-purple-600 dark:text-purple-300"
+                    : ""
                 }`}
               >
                 {project.title} ↗
               </h3>
               {selectedProject.id === project.id && (
-                <div className="border-border/80 my-4 border-b-2"></div>
+                <div className="my-4 border-b-2 border-purple-600 dark:border-purple-300"></div>
               )}
               {selectedProject.id === project.id && (
                 <p
-                  className={`text-foreground/60 transition-all duration-500 ease-in-out ${
+                  className={`text-gray-600 transition-all duration-500 ease-in-out dark:text-gray-400 ${
                     selectedProject.id === project.id
                       ? "opacity-100"
                       : "opacity-0"

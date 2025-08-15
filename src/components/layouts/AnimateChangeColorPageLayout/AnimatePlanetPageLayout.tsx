@@ -7,7 +7,7 @@ type Props = {
   children: ReactNode;
 };
 
-const LandingPageLayout = ({ title, children }: Props) => {
+const AnimatePlanetPageLayout = ({ title, children }: Props) => {
   return (
     <>
       <PageHead title={title} />
@@ -20,4 +20,4 @@ const LandingPageLayout = ({ title, children }: Props) => {
   );
 };
 
-export default LandingPageLayout;
+export default AnimatePlanetPageLayout;

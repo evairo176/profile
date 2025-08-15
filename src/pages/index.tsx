@@ -1,10 +1,9 @@
 import React from "react";
 import { GetStaticProps } from "next";
-// import AnimateChangeColorPage from "@/components/views/AnimateChangeColorPage";
-import AnimatePlanetPage from "@/components/views/AnimatePlanetPage";
+import MasterPage from "@/components/views/MasterPage";
 
 export default function HomePage() {
-  return <AnimatePlanetPage />;
+  return <MasterPage />;
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {

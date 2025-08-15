@@ -18,8 +18,10 @@ import {
   animate,
 } from "framer-motion";
 import { useEffect } from "react";
+import { useTheme } from "next-themes";
 
 const COLORS_TOP = ["#8A2BE2", "#9370DB", "#9932CC", "#800080"];
+const COLORS_TOP_LIGHT = ["#E6E6FA", "#DDA0DD", "#DA70D6", "#BA55D3"];
 
 const stackItems = [
   {
@@ -55,23 +57,42 @@ const stackItems = [
 ];
 
 const Stack = () => {
+  const { theme } = useTheme();
   const color = useMotionValue(COLORS_TOP[0]);
+  const colorLight = useMotionValue(COLORS_TOP_LIGHT[0]);
 
   useEffect(() => {
+    // Animate colors for both dark and light mode
     animate(color, COLORS_TOP, {
       ease: "easeInOut",
       duration: 10,
       repeat: Infinity,
       repeatType: "mirror",
     });
-  }, [color]);
 
-  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 100%, #000 50%, ${color})`;
+    animate(colorLight, COLORS_TOP_LIGHT, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
+  }, []);
+
+  // Dark mode styles (original)
+  const backgroundImageDark = useMotionTemplate`radial-gradient(125% 125% at 50% 100%, #000 50%, ${color})`;
+
+  // Light mode styles (new)
+  const backgroundImageLight = useMotionTemplate`radial-gradient(125% 125% at 50% 100%, #fff 50%, ${colorLight})`;
+
+  // Choose styles based on theme
+  const backgroundImage =
+    theme === "dark" ? backgroundImageDark : backgroundImageLight;
 
   return (
     <motion.section
+      id="stack"
       style={{ backgroundImage }}
-      className="px-4 py-32 text-white"
+      className="px-4 py-32 text-gray-800 dark:text-white"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -85,7 +106,8 @@ const Stack = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-16 text-center text-5xl font-bold"
         >
-          Tech <span className="text-purple-300">Stack</span>
+          Tech{" "}
+          <span className="text-purple-600 dark:text-purple-300">Stack</span>
         </motion.h2>
 
         <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-4">
@@ -95,12 +117,12 @@ const Stack = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="group rounded-xl border border-gray-800 p-6 transition-all duration-300 hover:border-purple-500/50"
+              className="group rounded-xl border border-gray-300 p-6 transition-all duration-300 hover:border-purple-400/50 dark:border-gray-800 dark:hover:border-purple-500/50"
             >
               <div className="flex flex-col items-center text-center">
                 <div className="relative mb-4">
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/40 to-blue-500/40 blur-xl transition-colors duration-300 group-hover:border-purple-500/50" />
-                  <div className="relative rounded-xl border border-gray-800 bg-gray-900/50 p-4 transition-colors duration-300 group-hover:border-purple-500/50">
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-400/30 to-blue-400/30 blur-xl transition-colors duration-300 dark:from-purple-500/40 dark:to-blue-500/40" />
+                  <div className="relative rounded-xl border border-gray-300 bg-gray-100/50 p-4 transition-colors duration-300 group-hover:border-purple-400/50 dark:border-gray-800 dark:bg-gray-900/50 dark:group-hover:border-purple-500/50">
                     <item.icon
                       className="h-12 w-12"
                       style={{ color: item.color }}

@@ -5,19 +5,21 @@ import About from "./About";
 import LogoTicker from "./LogoTicker";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
+
+import AnimateChangeColorPageLayout from "@/components/layouts/AnimatePlanetPageLayout";
 import Footer from "./Footer";
 
 const AnimateChangeColorPage = () => {
   return (
-    <div>
+    <AnimateChangeColorPageLayout title="Home">
       <Hero />
-      <Stack />
       <About />
       <LogoTicker />
       <Portfolio />
+      <Stack />
       <Contact />
       <Footer />
-    </div>
+    </AnimateChangeColorPageLayout>
   );
 };
 

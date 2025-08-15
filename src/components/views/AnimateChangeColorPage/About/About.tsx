@@ -8,8 +8,10 @@ import {
 } from "framer-motion";
 import { useEffect } from "react";
 import { FiCode, FiLayers, FiServer, FiCpu } from "react-icons/fi";
+import { useTheme } from "next-themes";
 
 const COLORS_TOP = ["#8A2BE2", "#9370DB", "#9932CC", "#800080"];
+const COLORS_TOP_LIGHT = ["#E6E6FA", "#DDA0DD", "#DA70D6", "#BA55D3"];
 
 const skills = [
   {
@@ -39,10 +41,20 @@ const skills = [
 ];
 
 const About = () => {
+  const { theme } = useTheme();
   const color = useMotionValue(COLORS_TOP[0]);
+  const colorLight = useMotionValue(COLORS_TOP_LIGHT[0]);
 
   useEffect(() => {
+    // Animate colors for both dark and light mode
     animate(color, COLORS_TOP, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
+
+    animate(colorLight, COLORS_TOP_LIGHT, {
       ease: "easeInOut",
       duration: 10,
       repeat: Infinity,
@@ -50,12 +62,20 @@ const About = () => {
     });
   }, []);
 
-  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000 50%, ${color})`;
+  // Dark mode styles (original)
+  const backgroundImageDark = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000 50%, ${color})`;
+
+  // Light mode styles (new)
+  const backgroundImageLight = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #fff 50%, ${colorLight})`;
+
+  // Choose styles based on theme
+  const backgroundImage =
+    theme === "dark" ? backgroundImageDark : backgroundImageLight;
 
   return (
     <motion.section
       style={{ backgroundImage }}
-      className="overflow-x-clip px-6 py-32 text-white"
+      className="overflow-x-clip px-6 py-32 text-gray-800 dark:text-white"
       id="about"
     >
       <motion.div
@@ -65,17 +85,17 @@ const About = () => {
         className="relative mx-auto max-w-[1200px]"
       >
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/4 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl" />
-          <div className="absolute right-1/4 bottom-0 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl" />
+          <div className="absolute top-0 left-1/4 h-72 w-72 rounded-full bg-purple-400/30 blur-3xl dark:bg-purple-500/20" />
+          <div className="absolute right-1/4 bottom-0 h-72 w-72 rounded-full bg-purple-400/30 blur-3xl dark:bg-purple-500/20" />
         </div>
 
         <motion.h2
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mb-16 w-full text-center text-5xl font-bold text-white"
+          className="mb-16 w-full text-center text-5xl font-bold text-gray-800 dark:text-white"
         >
-          About <span className="text-purple-300">Me</span>
+          About <span className="text-purple-600 dark:text-purple-300">Me</span>
         </motion.h2>
 
         <div className="grid gap-12 md:grid-cols-2">
@@ -84,17 +104,17 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="space-y-6 rounded-lg border border-gray-800 p-6 transition-colors duration-300 hover:border-purple-500/50">
-              <p className="text-2xl font-semibold text-purple-300">
+            <div className="space-y-6 rounded-lg border border-gray-300 p-6 transition-colors duration-300 hover:border-purple-400/50 dark:border-gray-800 dark:hover:border-purple-500/50">
+              <p className="text-2xl font-semibold text-purple-600 dark:text-purple-300">
                 My Journey
               </p>
-              <p className="text-lg leading-relaxed text-gray-300">
+              <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                 {`I'm`} a passionate Fullstack Developer with over 5 years of
                 experience in creating innovative web solutions. My journey in
                 tech has been driven by a constant desire to learn and push the
                 boundaries of {`what's`} possible on the web.
               </p>
-              <p className="text-lg leading-relaxed text-gray-300">
+              <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                 When {`I'm`} not coding, you can find me exploring new
                 technologies, contributing to open-source projects, or sharing
                 my knowledge through technical writing and mentoring.
@@ -114,17 +134,19 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 * index }}
-                className="rounded-lg border border-gray-800 p-6 backdrop-blur-3xl transition-colors duration-300 hover:border-purple-500/50"
+                className="rounded-lg border border-gray-300 p-6 backdrop-blur-3xl transition-colors duration-300 hover:border-purple-400/50 dark:border-gray-800 dark:hover:border-purple-500/50"
               >
                 <div className="flex items-start gap-4">
-                  <div className="rounded-lg bg-purple-500/10 p-3 text-purple-300">
+                  <div className="rounded-lg bg-purple-400/20 p-3 text-purple-600 dark:bg-purple-500/10 dark:text-purple-300">
                     <skill.icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="mb-2 text-xl font-semibold">
+                    <h3 className="mb-2 text-xl font-semibold text-gray-800 dark:text-white">
                       {skill.title}
                     </h3>
-                    <p className="text-gray-400">{skill.description}</p>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      {skill.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>

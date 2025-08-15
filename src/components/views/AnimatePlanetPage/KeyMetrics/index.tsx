@@ -1,3 +1,3 @@
-import { KeyMetrics } from "./KeyMetrics";
+import KeyMetrics from "./KeyMetrics";
 
 export default KeyMetrics;

@@ -1,4 +1,4 @@
-export const Services = () => {
+const Services = () => {
   const services = [
     {
       id: "01",
@@ -39,23 +39,22 @@ export const Services = () => {
   ];
 
   return (
-    <div className="text-foreground/80 container mx-auto flex flex-col px-4 py-20 md:flex-row">
+    <div className="container mx-auto flex flex-col py-20 text-gray-800 md:flex-row dark:text-white">
       <div className="w-1/4 pr-8">
         <h2 className="sticky top-20 text-6xl font-extrabold">SERVICES</h2>
       </div>
 
-      <div className="mt-3 w-3/4">
+      <div className="w-3/4">
         {services.map((service) => (
-          <div
-            key={service.id}
-            className="mb-16 flex flex-col items-start md:flex-row"
-          >
-            <div className="text-primary mr-6 text-5xl font-bold">
+          <div key={service.id} className="mb-16 flex items-start">
+            <div className="mr-6 text-5xl font-bold text-purple-600 dark:text-purple-400">
               {service.id}
             </div>
             <div>
               <h3 className="mb-2 text-2xl font-bold">{service.title}</h3>
-              <p className="text-muted-foreground">{service.description}</p>
+              <p className="text-gray-600 dark:text-gray-400">
+                {service.description}
+              </p>
             </div>
           </div>
         ))}
@@ -63,3 +62,5 @@ export const Services = () => {
     </div>
   );
 };
+
+export default Services;
