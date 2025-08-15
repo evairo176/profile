@@ -1,0 +1,121 @@
+"use client";
+
+import {
+  FaReact,
+  //  FaNodeJs
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiMongodb,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiFramer,
+} from "react-icons/si";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  animate,
+} from "framer-motion";
+import { useEffect } from "react";
+
+const COLORS_TOP = ["#8A2BE2", "#9370DB", "#9932CC", "#800080"];
+
+const stackItems = [
+  {
+    name: "React",
+    icon: FaReact,
+    color: "#61DAFB",
+  },
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+    color: "#000000",
+  },
+  {
+    name: "Tailwind",
+    icon: SiTailwindcss,
+    color: "#06B6D4",
+  },
+  {
+    name: "Framer",
+    icon: SiFramer,
+    color: "#0055FF",
+  },
+  {
+    name: "Typescript",
+    icon: SiTypescript,
+    color: "#0055FF",
+  },
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+    color: "#00684A",
+  },
+];
+
+const Stack = () => {
+  const color = useMotionValue(COLORS_TOP[0]);
+
+  useEffect(() => {
+    animate(color, COLORS_TOP, {
+      ease: "easeInOut",
+      duration: 10,
+      repeat: Infinity,
+      repeatType: "mirror",
+    });
+  }, [color]);
+
+  const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 100%, #000 50%, ${color})`;
+
+  return (
+    <motion.section
+      style={{ backgroundImage }}
+      className="px-4 py-32 text-white"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mx-auto max-w-[1200px]"
+      >
+        <motion.h2
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-16 text-center text-5xl font-bold"
+        >
+          Tech <span className="text-purple-300">Stack</span>
+        </motion.h2>
+
+        <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-4">
+          {stackItems.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+              className="group rounded-xl border border-gray-800 p-6 transition-all duration-300 hover:border-purple-500/50"
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="relative mb-4">
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/40 to-blue-500/40 blur-xl transition-colors duration-300 group-hover:border-purple-500/50" />
+                  <div className="relative rounded-xl border border-gray-800 bg-gray-900/50 p-4 transition-colors duration-300 group-hover:border-purple-500/50">
+                    <item.icon
+                      className="h-12 w-12"
+                      style={{ color: item.color }}
+                    />
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-semibold">{item.name}</h3>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </motion.section>
+  );
+};
+
+export default Stack;

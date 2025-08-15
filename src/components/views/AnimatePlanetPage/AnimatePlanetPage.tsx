@@ -8,10 +8,11 @@ import Stack from "./Stack";
 import Services from "./Services";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import AnimatePlanetPageLayout from "@/components/layouts/AnimatePlanetPageLayout";
 
 const LandingPage = () => {
   return (
-    <div>
+    <AnimatePlanetPageLayout title="Home">
       <Hero />
       <LogoAnimation />
       <About />
@@ -21,7 +22,7 @@ const LandingPage = () => {
       <Services />
       <Contact />
       <Footer />
-    </div>
+    </AnimatePlanetPageLayout>
   );
 };
 

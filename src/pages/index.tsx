@@ -1,17 +1,10 @@
 import React from "react";
 import { GetStaticProps } from "next";
-
-import LandingPageLayout from "@/components/layouts/LandingPageLayout";
-import LandingPage from "@/components/views/LandingPage";
+// import AnimateChangeColorPage from "@/components/views/AnimateChangeColorPage";
+import AnimatePlanetPage from "@/components/views/AnimatePlanetPage";
 
 export default function HomePage() {
-  return (
-    <>
-      <LandingPageLayout title="Home">
-        <LandingPage />
-      </LandingPageLayout>
-    </>
-  );
+  return <AnimatePlanetPage />;
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
