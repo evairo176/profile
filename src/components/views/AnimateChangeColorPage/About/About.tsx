@@ -42,7 +42,6 @@ const About = () => {
   const color = useMotionValue(COLORS_TOP[0]);
 
   useEffect(() => {
-    f;
     animate(color, COLORS_TOP, {
       ease: "easeInOut",
       duration: 10,
