@@ -8,7 +8,7 @@ import ModeToggle from "@/components/commons/ModeToggle";
 import { LanguageSwitcher } from "@/components/commons/LanguageSwitcher";
 import { useTranslations } from "next-intl";
 
-type NavLink = { title: string; path: `#${string}` };
+type NavLink = { title: string; path: string };
 
 const HEADER_OFFSET = 96; // px: sesuaikan dengan tinggi header/padding kamu
 
@@ -24,9 +24,10 @@ const Navbar = () => {
   const navLinks: NavLink[] = useMemo(
     () => [
       { title: t("about"), path: "#about" },
-      { title: "Experience", path: "#experience" },
-      { title: "Portfolio", path: "#portfolio" },
-      { title: "Stack", path: "#stack" },
+      { title: t("experience"), path: "#experience" },
+      { title: t("portfolio"), path: "#portfolio" },
+      { title: t("stack"), path: "#stack" },
+      { title: t("services"), path: "#services" },
       { title: t("contact"), path: "#contact" },
     ],
     [t],
@@ -144,7 +145,7 @@ const Navbar = () => {
   return (
     <div className="fixed top-5 right-0 left-0 z-50 flex w-full justify-center font-bold">
       {/* Desktop navbar */}
-      <div className="border-border bg-card/40 supports-[backdrop-filter]:bg-card/30 mx-auto hidden max-w-[700px] items-center justify-center rounded-3xl border p-2 backdrop-blur md:flex">
+      <div className="border-border bg-card/40 supports-[backdrop-filter]:bg-card/30 mx-auto hidden items-center justify-center rounded-3xl border p-2 backdrop-blur md:flex md:flex-row">
         <div className="mr-3 flex gap-2">
           <ModeToggle />
           <LanguageSwitcher />

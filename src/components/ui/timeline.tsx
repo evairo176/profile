@@ -19,7 +19,12 @@ interface TimelineItem {
   technologies?: string[];
   image?: string;
   status?: "current" | "past";
-  icon?: React.ReactNode; // elemen siap render
+  icon?: React.ReactNode;
+  statusLabels?: {
+    current: string;
+    previous: string;
+  };
+  technologiesLabel?: string;
 }
 
 interface TimelineProps {
@@ -63,7 +68,16 @@ const Timeline: React.FC<TimelineProps> = ({ items, className }) => {
                   index % 2 === 0 ? "md:pr-8" : "md:pl-8",
                 )}
               >
-                <Card className="border-border border shadow-lg transition-shadow duration-300 hover:shadow-xl">
+                <Card className="border-border border pt-0 shadow-lg transition-shadow duration-300 hover:shadow-xl">
+                  {item.image && (
+                    <div className="relative h-48 w-full overflow-hidden md:rounded-t-lg">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                  )}
                   <CardHeader>
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <Badge
@@ -71,7 +85,9 @@ const Timeline: React.FC<TimelineProps> = ({ items, className }) => {
                           item.status === "current" ? "default" : "secondary"
                         }
                       >
-                        {item.status === "current" ? "Current" : "Previous"}
+                        {item.status === "current"
+                          ? item.statusLabels?.current || "Current"
+                          : item.statusLabels?.previous || "Previous"}
                       </Badge>
                       <span className="text-muted-foreground text-sm font-medium">
                         {item.date}
@@ -83,22 +99,13 @@ const Timeline: React.FC<TimelineProps> = ({ items, className }) => {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    {item.image && (
-                      <div className="relative h-48 w-full overflow-hidden md:rounded-t-lg">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="h-full w-full object-cover"
-                        />
-                      </div>
-                    )}
                     <p className="text-muted-foreground mb-4 leading-relaxed">
                       {item.description}
                     </p>
                     {item.technologies && item.technologies.length > 0 && (
                       <div>
                         <h4 className="mb-2 text-sm font-semibold">
-                          Technologies:
+                          {item.technologiesLabel || "Technologies:"}
                         </h4>
                         <div className="flex flex-wrap gap-2">
                           {item.technologies.map((tech, idx) => (

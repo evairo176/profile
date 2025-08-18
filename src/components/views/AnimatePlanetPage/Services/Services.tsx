@@ -39,7 +39,10 @@ const Services = () => {
   ];
 
   return (
-    <div className="container mx-auto flex w-full flex-col px-4 py-20 text-gray-800 md:flex-row md:px-0 dark:text-white">
+    <section
+      id="services"
+      className="container mx-auto flex w-full flex-col px-4 py-20 text-gray-800 md:flex-row md:px-0 dark:text-white"
+    >
       <div className="w-full pr-8 md:w-1/4">
         <h2 className="relative text-6xl font-extrabold md:sticky md:top-20">
           SERVICES
@@ -61,7 +64,7 @@ const Services = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

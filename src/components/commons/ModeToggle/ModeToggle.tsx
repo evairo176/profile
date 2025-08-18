@@ -32,7 +32,7 @@ export function ModeToggle() {
             ref={buttonRef}
             variant="outline"
             size="icon"
-            className={`rounded-full transition-all duration-300 ${
+            className={`cursor-pointer rounded-full transition-all duration-300 ${
               isTransitioning ? "theme-switching" : ""
             }`}
           >
@@ -45,21 +45,21 @@ export function ModeToggle() {
       <DropdownMenuContent align="end" className="transition-all duration-300">
         <DropdownMenuItem
           onClick={() => handleThemeChange("light")}
-          className="transition-colors duration-200"
+          className="cursor-pointer transition-colors duration-200"
         >
           <Sun className="mr-2 h-4 w-4" />
           Light
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => handleThemeChange("dark")}
-          className="transition-colors duration-200"
+          className="cursor-pointer transition-colors duration-200"
         >
           <Moon className="mr-2 h-4 w-4" />
           Dark
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => handleThemeChange("system")}
-          className="transition-colors duration-200"
+          className="cursor-pointer transition-colors duration-200"
         >
           <Monitor className="mr-2 h-4 w-4" />
           System

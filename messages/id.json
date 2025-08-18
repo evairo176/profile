@@ -1,7 +1,8 @@
 {
   "hero": {
     "greeting": "Halo, Saya",
-    "name": "Dicki Prasetya",
+    "firstName": "Dicki",
+    "lastName": "Prasetya",
     "description": "Saya adalah seorang fullstack developer yang fokus pada pembuatan website yang memberikan pengalaman terbaik bagi pengguna",
     "contactButton": "Hubungi Saya",
     "viewWorkButton": "Lihat Karya"
@@ -9,11 +10,16 @@
   "navigation": {
     "home": "Beranda",
     "about": "Tentang",
+    "experience": "Pengalaman",
     "projects": "Proyek",
-    "contact": "Kontak"
+    "contact": "Kontak",
+    "stack": "Teknologi",
+    "portfolio": "Projek",
+    "services": "Layanan"
   },
   "about": {
-    "title": "Tentang Saya",
+    "title_1": "Tentang",
+    "title_2": "Saya",
     "description": "Pelajari lebih lanjut tentang latar belakang dan keahlian saya",
     "background": {
       "title": "Latar Belakang",
@@ -36,6 +42,97 @@
     "goals": {
       "title": "Tujuan",
       "description": "Tujuan saya adalah terus berkembang sebagai developer, menangani proyek-proyek yang menantang, dan berkontribusi pada komunitas teknologi. Saya selalu bersemangat untuk mempelajari teknologi baru dan mendorong batas-batas dari apa yang mungkin dalam pengembangan web."
+    }
+  },
+  "experience": {
+    "title_1": "Pengalaman",
+    "title_2": "Kerja",
+    "description": "Perjalanan profesional saya dalam pengembangan web",
+    "status": {
+      "current": "Saat Ini",
+      "previous": "Sebelumnya"
+    },
+    "technologies": "Teknologi",
+    "jobs": {
+      "kpnPlantation": {
+        "title": "Middle Full Stack Developer",
+        "company": "KPN Plantations",
+        "date": "Agu 2023 - Sekarang",
+        "description": "Mengembangkan dan memelihara beragam proyek perusahaan (platform operasional & sistem manajemen bisnis), sekaligus beberapa kali memimpin inisiatif end-to-end dari perencanaan hingga rilis."
+      },
+      "extremeNetwork": {
+        "title": "Junior Full Stack Developer",
+        "company": "PT. Extreme Network Sisteem",
+        "date": "Okt 2022 - Jul 2023",
+        "description": "Mengembangkan dan memelihara berbagai proyek klien mulai dari platform e-commerce hingga sistem manajemen bisnis."
+      },
+      "frontend": {
+        "title": "Frontend Developer",
+        "company": "StartupHub Indonesia",
+        "date": "Jun 2019 - Feb 2020",
+        "description": "Fokus pada pembuatan antarmuka pengguna yang intuitif dan meningkatkan pengalaman pengguna untuk berbagai proyek startup."
+      },
+      "junior": {
+        "title": "Junior Web Developer",
+        "company": "WebDev Agency",
+        "date": "Agu 2018 - Mei 2019",
+        "description": "Memulai perjalanan profesional saya sebagai developer junior, mempelajari praktik terbaik industri dan berkontribusi pada berbagai proyek klien."
+      }
+    }
+  },
+  "portfolio": {
+    "title_1": "Proyek",
+    "title_2": "Terpilih",
+    "description": "Showcase karya dan proyek terbaru saya",
+    "view_project": "Lihat Proyek",
+    "technologies": "Teknologi",
+    "year": "Tahun",
+    "projects": {
+      "event": {
+        "title": "EventKu - Penyedia tiket untuk semua acara",
+        "description": "EventKu adalah platform untuk menemukan dan membuat event dari konser hingga workshop dengan pencarian cepat sesuai minat dan lokasi",
+        "year": "2025"
+      },
+      "mris": {
+        "title": "MRIS - Material Reservation System Information",
+        "description": "MRIS adalah aplikasi web untuk pengajuan dan pelacakan permintaan material ke gudang secara digital (paperless).",
+        "year": "2025"
+      },
+      "rkb": {
+        "title": "RKB/RKT - Rencana Kerja Bulanan atau tahunan",
+        "description": "aplikasi web untuk menyusun, mengunggah, dan memvalidasi rencana kerja bulanan mencakup Harvesting, Upkeep, hingga Contract dengan filter periode per bulan dan tabel rekap yang rapi serta terhubung dengan SAP.",
+        "year": "2024"
+      },
+      "psaweb": {
+        "title": "PSAWEB - Peta Online (survei web GIS)",
+        "description": "PSA WEB adalah aplikasi peta daring (survey web GIS) untuk menampilkan dan mengelola layer spasial perkebunan mulai dari basemap citra udara hingga lapisan operasional seperti blok, afdeling, kanal/sungai, jalan, dan kondisi tanaman.",
+        "year": "2024"
+      },
+      "ppa": {
+        "title": "PPA - Photo Proof App",
+        "description": "RKB adalah aplikasi yang berfungsi untuk mencatat jenis-jenis kegiatan karyawan perkebunan, sehingga kita dapat mengontrol dan melihatnya dengan mudah.",
+        "year": "2024"
+      },
+      "discord": {
+        "title": "Mini Discord - platform chating, panggilan suara dan video",
+        "description": "Rasakan pengalaman terbaik dalam komunikasi online dengan platform kami, yang terinspirasi oleh Discord, menyajikan pesan real-time, panggilan suara dan video.",
+        "year": "2024"
+      },
+      "jobseeker": {
+        "title": "JobHuntly - platform pencari pekerjaan dan pencari karyawan",
+        "description": "JobHuntly adalah platform pencarian kerja untuk menemukan 5000+ pekerjaan, menelusuri perusahaan, membuka lowongan pekerjaan bagi perusahaan, dan melamar lebih cepat berdasarkan jabatan dan lokasi.",
+        "year": "2024"
+      },
+      "pwa": {
+        "title": "PWA TNOS App - Layanan dan pendukung TNOS App",
+        "description": "TNOS adalah aplikasi pendampingan dan konsultasi yang siap siaga 24/7, membantu pengguna merasa lebih aman dan nyaman di mana pun berada.",
+        "year": "2023"
+      },
+      "tnosPayment": {
+        "title": "Pembayaran TNOS - Layanan dan pendukung payment TNOS app and web application",
+        "description": "Memudahkan pembayaran dengan metode pembayaran khusus Xendit seperti Kartu Kredit, Transfer Bank, E-Wallet, & Kode QR",
+        "year": "2023"
+      }
     }
   }
 }

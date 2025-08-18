@@ -1,7 +1,8 @@
 {
   "hero": {
     "greeting": "Hi, I am",
-    "name": "Dicki Prasetya",
+    "firstName": "Dicki",
+    "lastName": "Prasetya",
     "description": "I am a fullstack developer focusing on creating websites that provides user with best experience",
     "contactButton": "Contact Me",
     "viewWorkButton": "View Work"
@@ -9,11 +10,16 @@
   "navigation": {
     "home": "Home",
     "about": "About",
+    "experience": "Experience",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "stack": "Stack",
+    "portfolio": "Portfolio",
+    "services": "Services"
   },
   "about": {
-    "title": "About Me",
+    "title_1": "About",
+    "title_2": "Me",
     "description": "Learn more about my background and skills",
     "background": {
       "title": "Background",
@@ -36,6 +42,97 @@
     "goals": {
       "title": "Goals",
       "description": "My goal is to continue growing as a developer, tackling challenging projects, and contributing to the tech community. I'm always excited to learn new technologies and push the boundaries of what's possible in web development."
+    }
+  },
+  "experience": {
+    "title_1": "Work",
+    "title_2": "Experience",
+    "description": "My professional journey in web development",
+    "status": {
+      "current": "Current",
+      "previous": "Previous"
+    },
+    "technologies": "Technologies",
+    "jobs": {
+      "kpnPlantation": {
+        "title": "Middle Full Stack Developer",
+        "company": "KPN Plantations",
+        "date": "Aug 2023 - Present",
+        "description": "Developed and maintained various enterprise projects (operational platforms & business management systems), while leading end-to-end initiatives from planning to release."
+      },
+      "extremeNetwork": {
+        "title": "Junior Full Stack Developer",
+        "company": "PT. Extreme Network Sisteem",
+        "date": "Oct 2022 - Jul 2023",
+        "description": "Developed and maintained multiple client projects ranging from e-commerce platforms to business management systems."
+      },
+      "frontend": {
+        "title": "Frontend Developer",
+        "company": "StartupHub Indonesia",
+        "date": "Jun 2019 - Feb 2020",
+        "description": "Focused on creating intuitive user interfaces and improving user experience for various startup projects."
+      },
+      "junior": {
+        "title": "Junior Web Developer",
+        "company": "WebDev Agency",
+        "date": "Aug 2018 - May 2019",
+        "description": "Started my professional journey as a junior developer, learning industry best practices and contributing to various client projects."
+      }
+    }
+  },
+  "portfolio": {
+    "title_1": "Selected",
+    "title_2": "Projects",
+    "description": "Showcase of my recent work and projects",
+    "view_project": "View Project",
+    "technologies": "Technologies",
+    "year": "Year",
+    "projects": {
+      "event": {
+        "title": "EventKu - Ticket provider for all events",
+        "description": "EventKu is a platform for finding and creating events—from concerts to workshops—with quick searches by interest and location.",
+        "year": "2025"
+      },
+      "mris": {
+        "title": "MRIS - Material Reservation System Information",
+        "description": "MRIS is a web application for submitting and tracking material requests to the warehouse digitally (paperless).",
+        "year": "2025"
+      },
+      "rkb": {
+        "title": "RKB/RKT - Monthly or annual work plan",
+        "description": "RKB is a Web application for compiling, uploading, and validating monthly work plans—covering Harvesting, Upkeep, to Contract with monthly period filters and neat recap tables.",
+        "year": "2024"
+      },
+      "psaweb": {
+        "title": "PSAWEB - Online map application (survey web GIS)",
+        "description": "PSA WEB is an online map application (survey web GIS) for displaying and managing plantation spatial layers starting from aerial image basemaps to operational layers such as blocks, subdivisions, canals/rivers, roads and plant conditions.",
+        "year": "2024"
+      },
+      "ppa": {
+        "title": "PPA - Photo Proof App",
+        "description": "Application that functions to record types of plantation employee activities, so that we can control and view them easily.",
+        "year": "2024"
+      },
+      "discord": {
+        "title": "Mini Discord - platform real-time messaging, voice and video calls",
+        "description": "Experience the best in online communication with our platform, inspired by Discord, featuring real-time messaging, voice and video calls.",
+        "year": "2024"
+      },
+      "jobseeker": {
+        "title": "JobHuntly - platform job search & employee search",
+        "description": "JobHuntly is a job search platform to find 5000+ jobs, browse companies, share job for companies, and apply faster based on position title and location.",
+        "year": "2024"
+      },
+      "pwa": {
+        "title": "PWA TNOS App - Service and support TNOS App",
+        "description": "TNOS is a support and consultation application that is ready 24/7, helping users feel safer and more comfortable wherever they are.",
+        "year": "2023"
+      },
+      "tnosPayment": {
+        "title": "Payment TNOS - Service and support payment TNOS app and web application",
+        "description": "Make it easy to pay with special Xendit payment methods such as Credit Card, Bank Transfer, E-Wallet, & QR Code",
+        "year": "2023"
+      }
     }
   }
 }

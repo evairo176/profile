@@ -78,13 +78,13 @@ const MasterPage = () => {
                   value={selectedTemplate.toString()}
                   onValueChange={handleTemplateChange}
                 >
-                  <SelectTrigger className="w-full">
+                  <SelectTrigger className="w-full cursor-pointer">
                     <SelectValue placeholder="Choose template..." />
                   </SelectTrigger>
                   <SelectContent>
                     {TEMPLATES.map((template, index) => (
                       <SelectItem key={index} value={index.toString()}>
-                        <div className="flex items-center gap-2">
+                        <div className="flex cursor-pointer items-center gap-2">
                           <div className="bg-primary/60 h-2 w-2 rounded-full" />
                           {template.name}
                         </div>
@@ -111,7 +111,7 @@ const MasterPage = () => {
           <Button
             onClick={toggleSelector}
             size="icon"
-            className={`rounded-full shadow-lg transition-all duration-300 ${
+            className={`cursor-pointer rounded-full shadow-lg transition-all duration-300 ${
               isOpen
                 ? "bg-primary text-primary-foreground"
                 : "bg-card/95 border-border hover:bg-accent border backdrop-blur-md"
