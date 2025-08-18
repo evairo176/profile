@@ -40,10 +40,10 @@ const Portfolio = () => {
 
   return (
     <motion.section
-      className="bg-white py-32 text-gray-800 dark:bg-black dark:text-white"
+      className="bg-white py-32 text-gray-800 md:px-0 dark:bg-black dark:text-white"
       id="portfolio"
     >
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 lg:grid-cols-2">
+      <div className="container mx-auto grid grid-cols-1 gap-12 px-4 md:px-0 lg:grid-cols-2">
         <div>
           <h2 className="mb-10 text-6xl font-bold">
             Selected{" "}

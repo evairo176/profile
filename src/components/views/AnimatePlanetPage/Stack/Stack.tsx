@@ -79,12 +79,12 @@ const Stack = () => {
   }, [controls, inView]);
 
   return (
-    <section id="stack">
+    <section id="stack" className="overflow-hidden">
       <div className="mx-auto max-w-[250px] text-center">
         <h2 className="mb-10 text-7xl font-bold text-gray-600 dark:text-gray-200">
           My Stack
         </h2>
-        <div className="grid gap-8" ref={ref}>
+        <div className="grid gap-8 overflow-hidden" ref={ref}>
           {stackItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -92,12 +92,14 @@ const Stack = () => {
               initial="hidden"
               animate={controls}
               variants={itemVariants}
-              className="flex flex-row items-center justify-center rounded-xl bg-gray-200/30 p-4 shadow-lg hover:shadow-2xl dark:bg-white/10"
+              className="flex flex-row items-center justify-center overflow-hidden rounded-xl bg-gray-200/30 p-4 shadow-lg hover:shadow-2xl dark:bg-white/10"
             >
               <div className={`mb-4 ${item.color}`}>{item.icon}</div>
-              <p className="rotate-[-90deg] transform text-3xl text-gray-400/40 dark:text-white/20">
-                {item.name}
-              </p>
+              <div>
+                <p className="rotate-[-90deg] transform text-3xl whitespace-nowrap text-gray-400/40 dark:text-white/20">
+                  {item.name}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

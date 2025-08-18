@@ -53,7 +53,7 @@ const KeyMetrics: React.FC = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ delay: 0.2, duration: 0.6 }}
-      className="container mx-auto px-4 py-32"
+      className="container mx-auto px-4 py-32 md:px-0"
     >
       <motion.h2
         initial={{ opacity: 0, y: 20 }}

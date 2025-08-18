@@ -1,22 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 
 const Contact = () => {
-  const { theme } = useTheme();
-
   return (
     <section
       id="contact"
-      className="mx-auto max-w-[1200px] px-4 py-32 text-gray-800 dark:text-white"
+      className="container mx-auto px-4 py-32 text-gray-800 md:px-0 dark:text-white"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="grid gap-16 lg:grid-cols-2"
+        className="grid gap-16 overflow-hidden lg:grid-cols-2"
       >
         <div className="space-y-12">
           <motion.h2

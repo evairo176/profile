@@ -5,7 +5,10 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section id="about" className="p-8 text-gray-800 dark:text-white">
+    <section
+      id="about"
+      className="container mx-auto px-4 py-20 text-gray-800 md:px-0 dark:text-white"
+    >
       <h2 className="mb-8 text-6xl font-bold">
         About <span className="text-purple-600 dark:text-purple-300">Me</span>
       </h2>
