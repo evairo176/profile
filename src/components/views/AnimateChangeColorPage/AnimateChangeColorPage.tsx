@@ -6,7 +6,7 @@ import LogoTicker from "./LogoTicker";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
 
-import AnimateChangeColorPageLayout from "@/components/layouts/AnimatePlanetPageLayout";
+import AnimateChangeColorPageLayout from "@/components/layouts/AnimateChangeColorPageLayout";
 import Footer from "./Footer";
 
 const AnimateChangeColorPage = () => {

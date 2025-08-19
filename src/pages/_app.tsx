@@ -8,8 +8,7 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect, useMemo } from "react";
 import environment from "@/config/environment";
-import { DefaultSeo, WebPageJsonLd, ProfilePageJsonLd } from "next-seo";
-import { SEO_BY_LOCALE, BASE_URL } from "@/../next-seo.config"; // atau ganti ke alias "@/next-seo.config"
+import Head from "next/head";
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
@@ -28,24 +27,6 @@ declare global {
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const { locale = "id", locales = [], asPath } = router;
-  const lang = locale;
-  const seo = SEO_BY_LOCALE[lang] ?? SEO_BY_LOCALE.id;
-
-  const canonical = useMemo(
-    () => `${BASE_URL}${asPath === "/" ? "" : asPath}`,
-    [asPath],
-  );
-
-  const languageAlternates = useMemo(
-    () =>
-      locales.map((l) => ({
-        hrefLang: l,
-        href: `${BASE_URL}${l === "id" ? "" : `/${l}`}${
-          asPath === "/" ? "" : asPath
-        }`,
-      })),
-    [locales, asPath],
-  );
 
   // GA4 pageview on route change
   useEffect(() => {
@@ -60,12 +41,6 @@ export default function App({ Component, pageProps }: AppProps) {
       router.events.off("hashChangeComplete", handleRouteChange);
     };
   }, [router.events]);
-
-  // Deskripsi singkat multi-bahasa (buat JSON-LD)
-  const desc =
-    lang === "id"
-      ? "Portfolio web Dicki Prasetya, seorang Middle Developer yang berfokus pada pengembangan aplikasi web modern, scalable, dan user-friendly."
-      : "Dicki Prasetya’s portfolio — a Middle Developer focused on building modern, scalable, and user-friendly web applications.";
 
   return (
     <NextIntlClientProvider locale={locale} messages={pageProps.messages}>
@@ -88,61 +63,85 @@ export default function App({ Component, pageProps }: AppProps) {
               </Script>
             </>
           )}
-
-          {/* Default SEO (i18n-aware) */}
-          <DefaultSeo
-            {...seo}
-            languageAlternates={languageAlternates}
-            additionalLinkTags={[
-              { rel: "alternate", hrefLang: "x-default", href: canonical },
-            ]}
-            canonical={canonical}
-          />
-
-          {/* JSON-LD lengkap (optional tapi disarankan) */}
-          {/* <WebSiteJsonLd
-            id={`${BASE_URL}#website`}
-            url={BASE_URL}
-            name="Dicki Prasetya ( Evairo )"
-            alternateName="Evairo Portfolio"
-          /> */}
-          <WebPageJsonLd
-            id={`${canonical}#webpage`}
-            url={canonical}
-            name="Dicki Prasetya Portfolio"
-            description={desc}
-            inLanguage={lang}
-            primaryImageOfPage={{
-              "@type": "ImageObject",
-              url: `${BASE_URL}/assets/proj5.png`, // pastikan file ada
-            }}
-            isPartOf={{
-              "@type": "WebSite",
-              name: "Dicki Prasetya ( Evairo )",
-              url: BASE_URL,
-            }}
-          />
-          <ProfilePageJsonLd
-            id={`${canonical}#profile`}
-            type="Person"
-            breadcrumb={canonical} // diwajibkan di beberapa versi next-seo
-            name="Dicki Prasetya"
-            jobTitle="Middle Developer"
-            url={BASE_URL}
-            sameAs={[
-              "https://github.com/evairo176",
-              "https://www.linkedin.com/in/dicki-prasetya-3a7587195",
-            ]}
-            image={`${BASE_URL}/avatar.jpg`} // ganti jika punya
-            description={desc}
-            knowsAbout={[
-              "Next.js",
-              "TypeScript",
-              "React",
-              "Node.js",
-              "Tailwind CSS",
-            ]}
-          />
+          <Head>
+            {/* favicon & manifest global (dari kode lamamu) */}
+            <link
+              rel="apple-touch-icon"
+              sizes="57x57"
+              href="/ico/apple-icon-57x57.png"
+            />
+            <link
+              rel="apple-touch-icon"
+              sizes="60x60"
+              href="/ico/apple-icon-60x60.png"
+            />
+            <link
+              rel="apple-touch-icon"
+              sizes="72x72"
+              href="/ico/apple-icon-72x72.png"
+            />
+            <link
+              rel="apple-touch-icon"
+              sizes="76x76"
+              href="/ico/apple-icon-76x76.png"
+            />
+            <link
+              rel="apple-touch-icon"
+              sizes="114x114"
+              href="/ico/apple-icon-114x114.png"
+            />
+            <link
+              rel="apple-touch-icon"
+              sizes="120x120"
+              href="/ico/apple-icon-120x120.png"
+            />
+            <link
+              rel="apple-touch-icon"
+              sizes="144x144"
+              href="/ico/apple-icon-144x144.png"
+            />
+            <link
+              rel="apple-touch-icon"
+              sizes="152x152"
+              href="/ico/apple-icon-152x152.png"
+            />
+            <link
+              rel="apple-touch-icon"
+              sizes="180x180"
+              href="/ico/apple-icon-180x180.png"
+            />
+            <link
+              rel="icon"
+              type="image/png"
+              sizes="192x192"
+              href="/ico/android-icon-192x192.png"
+            />
+            <link
+              rel="icon"
+              type="image/png"
+              sizes="32x32"
+              href="/ico/favicon-32x32.png"
+            />
+            <link
+              rel="icon"
+              type="image/png"
+              sizes="96x96"
+              href="/ico/favicon-96x96.png"
+            />
+            <link
+              rel="icon"
+              type="image/png"
+              sizes="16x16"
+              href="/ico/favicon-16x16.png"
+            />
+            <link rel="manifest" href="/ico/manifest.json" />
+            <meta name="msapplication-TileColor" content="#ffffff" />
+            <meta
+              name="msapplication-TileImage"
+              content="/ico/ms-icon-144x144.png"
+            />
+            <meta name="theme-color" content="#ffffff" />
+          </Head>
 
           <Component {...pageProps} />
         </main>

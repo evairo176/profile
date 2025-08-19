@@ -1,3 +1,3 @@
-import AnimateChangeColorPageLayout from "./AnimateChangeColorPageLayout";
+import AnimatePlanetPageLayout from "./AnimatePlanetPageLayout";
 
-export default AnimateChangeColorPageLayout;
+export default AnimatePlanetPageLayout;
