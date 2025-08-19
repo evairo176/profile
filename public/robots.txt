@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://profile-mu-two.vercel.app
+
+# Sitemaps
+Sitemap: https://profile-mu-two.vercel.app/sitemap.xml
