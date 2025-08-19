@@ -10,7 +10,7 @@ type Props = {
 const AnimatePlanetPageLayout = ({ title, children }: Props) => {
   return (
     <>
-      <PageHead title={title} />
+      {/* <PageHead title={title} /> */}
       {/* navbar  */}
       <Navbar />
       {/* main  */}

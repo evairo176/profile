@@ -3,14 +3,14 @@ import React, { ReactNode } from "react";
 import Navbar from "./Navbar";
 
 type Props = {
-  title: string;
+  title?: string;
   children: ReactNode;
 };
 
 const AnimateChangeColorPageLayout = ({ title, children }: Props) => {
   return (
     <>
-      <PageHead title={title} />
+      {/* <PageHead title={title} /> */}
       {/* navbar  */}
       <Navbar />
       {/* main  */}
