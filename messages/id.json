@@ -26,7 +26,11 @@
     "description": "Pelajari lebih lanjut tentang latar belakang dan keahlian saya",
     "background": {
       "title": "Latar Belakang",
-      "description": "Saya adalah seorang full-stack developer yang bersemangat dengan fondasi yang kuat dalam ilmu komputer dan kecintaan untuk menciptakan solusi web yang inovatif. Perjalanan saya didorong oleh rasa ingin tahu, komitmen terhadap kode yang bersih dan efisien, serta kegembiraan mengubah masalah kompleks menjadi pengalaman yang intuitif dan ramah pengguna."
+      "description": "Saya adalah seorang full-stack developer yang bersemangat dengan fondasi yang kuat dalam ilmu komputer dan kecintaan untuk menciptakan solusi web yang inovatif. Perjalanan saya didorong oleh rasa ingin tahu, komitmen terhadap kode yang bersih dan efisien, serta kegembiraan mengubah masalah kompleks menjadi pengalaman yang intuitif dan ramah pengguna.",
+      "education": "Pendidikan",
+      "education_1": "Diploma 3 (D3) Teknik Informatika",
+      "college": "Perguruan Tinggi",
+      "college_1": "Politeknik Negeri Indramayu"
     },
     "expertise": {
       "title": "Keahlian",
@@ -125,6 +129,16 @@
         "title": "JobHuntly - platform pencari pekerjaan dan pencari karyawan",
         "description": "JobHuntly adalah platform pencarian kerja untuk menemukan 5000+ pekerjaan, menelusuri perusahaan, membuka lowongan pekerjaan bagi perusahaan, dan melamar lebih cepat berdasarkan jabatan dan lokasi.",
         "year": "2024"
+      },
+      "blog": {
+        "title": "Explorer - Blog pribadi bertema teknologi & pengalaman",
+        "description": "Explorer adalah blog pribadi bertema teknologi & pengalaman dengan sistem tag, kategori, dan widget rekomendasi yang memudahkan pembaca menemukan topik relevan.",
+        "year": "2024"
+      },
+      "news": {
+        "title": "News - Portal berita utama yang menawarkan berita terbaru dan analisis mendalam di berbagai bidang",
+        "description": "Portal berita utama yang menawarkan berita terbaru dan analisis mendalam di berbagai bidang, termasuk politik, ekonomi, hiburan, dan teknologi.",
+        "year": "2023"
       },
       "pwa": {
         "title": "PWA TNOS App - Layanan dan pendukung TNOS App",

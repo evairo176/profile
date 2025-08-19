@@ -27,7 +27,11 @@
     "description": "Learn more about my background and skills",
     "background": {
       "title": "Background",
-      "description": "I'm a passionate full-stack developer with a strong foundation in computer science and a love for creating innovative web solutions. My journey has been driven by curiosity, a commitment to clean and efficient code, and the excitement of turning complex problems into intuitive, user-friendly experiences."
+      "description": "I'm a passionate full-stack developer with a strong foundation in computer science and a love for creating innovative web solutions. My journey has been driven by curiosity, a commitment to clean and efficient code, and the excitement of turning complex problems into intuitive, user-friendly experiences.",
+      "education": "Education",
+      "education_1": "Diploma 3 (D3) Informatics Engineering",
+      "college": "College",
+      "college_1": "Politeknik Negeri Indramayu"
     },
     "expertise": {
       "title": "Expertise",
@@ -127,6 +131,17 @@
         "description": "JobHuntly is a job search platform to find 5000+ jobs, browse companies, share job for companies, and apply faster based on position title and location.",
         "year": "2024"
       },
+      "blog": {
+        "title": "Explorer - Technology & experience themed personal blog",
+        "description": "Explorer is a personal blog with a technology & experience theme with a tag system, categories and recommendation widgets that make it easy for readers to find relevant topics.",
+        "year": "2024"
+      },
+      "news": {
+        "title": "News - A premier news portal offering the latest news and in-depth analysis in a variety of fields",
+        "description": "A premier news portal offering the latest news and in-depth analysis in a variety of fields, including politics, economics, entertainment and technology.",
+        "year": "2023"
+      },
+
       "pwa": {
         "title": "PWA TNOS App - Service and support TNOS App",
         "description": "TNOS is a support and consultation application that is ready 24/7, helping users feel safer and more comfortable wherever they are.",

@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Palette, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { toast } from "sonner";
 
 const MasterPage = () => {
   const router = useRouter();
@@ -42,6 +43,11 @@ const MasterPage = () => {
       undefined,
       { shallow: true }, // Don't trigger a full page reload
     );
+
+    toast.success("Template Changed", {
+      description: `You have selected the ${TEMPLATES[parseInt(value)].name} template.`,
+      duration: 3000,
+    });
   };
 
   const toggleSelector = () => {

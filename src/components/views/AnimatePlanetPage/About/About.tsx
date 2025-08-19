@@ -25,6 +25,24 @@ const About = () => {
           <p className="mb-6 text-justify text-gray-600/70 dark:text-white/50">
             {`${t("background.description")}`}
           </p>
+          <table className="w-full text-sm text-gray-600/70 dark:text-white/50">
+            <thead>
+              <tr>
+                <td>
+                  {t("background.education")}{" "}
+                  <span className="float-right">: </span>
+                </td>
+                <td>{t("background.education_1")}</td>
+              </tr>
+              <tr>
+                <td>
+                  {t("background.college")}{" "}
+                  <span className="float-right">: </span>
+                </td>
+                <td>{t("background.college_1")}</td>
+              </tr>
+            </thead>
+          </table>
         </div>
 
         <div className="rounded-lg border border-gray-300/40 p-6 dark:border-white/20">

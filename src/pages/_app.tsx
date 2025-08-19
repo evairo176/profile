@@ -9,6 +9,7 @@ import Script from "next/script";
 import { useEffect, useMemo } from "react";
 import environment from "@/config/environment";
 import Head from "next/head";
+import { Toaster } from "@/components/ui/sonner";
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
@@ -144,6 +145,12 @@ export default function App({ Component, pageProps }: AppProps) {
           </Head>
 
           <Component {...pageProps} />
+          <Toaster
+            position="top-center"
+            richColors
+            closeButton
+            duration={300}
+          />
         </main>
       </ThemeProvider>
     </NextIntlClientProvider>

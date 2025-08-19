@@ -23,6 +23,8 @@ import tnosApp from "/public/portfolio/tnos/tnos_clean.webp";
 import paymentXenditCustom from "/public/portfolio/tnos/payment-xendit-custom.png";
 import discord from "/public/portfolio/discord/discord.png";
 import jobseeker from "/public/portfolio/jobseeker/jobhuntly_browser_mockup.webp";
+import blog from "/public/portfolio/blog/explorer_browser_mockup.webp";
+import news from "/public/portfolio/news/magz_browser_mockup.webp";
 import Link from "next/link";
 
 interface Project {
@@ -160,6 +162,32 @@ const Portfolio = () => {
       ],
       link: "#",
     },
+    {
+      id: "10",
+      title: t("projects.blog.title"),
+      description: t("projects.blog.description"),
+      year: t("projects.blog.year"),
+      image: blog,
+      technologies: [
+        "Next JS",
+        "Express.js",
+        "Typescript.js",
+        "MongoDB",
+        "Shadcn UI",
+        "Emoji",
+        "Framer Motion",
+      ],
+      link: "#",
+    },
+    {
+      id: "11",
+      title: t("projects.news.title"),
+      description: t("projects.news.description"),
+      year: t("projects.news.year"),
+      image: news,
+      technologies: ["Laravel", "MySql"],
+      link: "#",
+    },
   ];
 
   const [selectedProject, setSelectedProject] = useState(projects[0]);
@@ -191,6 +219,7 @@ const Portfolio = () => {
               variant={viewMode === "grid" ? "default" : "outline"}
               onClick={() => setViewMode("grid")}
               size="sm"
+              className="cursor-pointer"
             >
               Grid View
             </Button>
@@ -198,6 +227,7 @@ const Portfolio = () => {
               variant={viewMode === "detailed" ? "default" : "outline"}
               onClick={() => setViewMode("detailed")}
               size="sm"
+              className="cursor-pointer"
             >
               Detailed View
             </Button>

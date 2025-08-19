@@ -1,100 +1,41 @@
 "use client";
-import React, { useEffect } from "react";
-import {
-  SiFramer,
-  SiFigma,
-  SiReact,
-  SiNodedotjs,
-  SiMongodb,
-  SiDocker,
-} from "react-icons/si";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React from "react";
 
-const stackItems = [
-  {
-    id: 1,
-    name: "Framer",
-    icon: <SiFramer size={100} />,
-    color: "text-purple-600 dark:text-purple-300",
-  },
-  {
-    id: 2,
-    name: "Figma",
-    icon: <SiFigma size={100} />,
-    color: "text-purple-600 dark:text-purple-300",
-  },
-  {
-    id: 3,
-    name: "React",
-    icon: <SiReact size={100} />,
-    color: "text-purple-600 dark:text-purple-300",
-  },
-  {
-    id: 4,
-    name: "Node.js",
-    icon: <SiNodedotjs size={100} />,
-    color: "text-purple-600 dark:text-purple-300",
-  },
-  {
-    id: 5,
-    name: "MongoDB",
-    icon: <SiMongodb size={100} />,
-    color: "text-purple-600 dark:text-purple-300",
-  },
-  {
-    id: 6,
-    name: "Docker",
-    icon: <SiDocker size={100} />,
-    color: "text-purple-600 dark:text-purple-300",
-  },
-];
-
-const itemVariants = {
-  hidden: (index: number) => ({
-    opacity: 0,
-    x: index % 2 === 0 ? -100 : 100,
-  }),
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 3,
-    },
-  },
-};
+import { motion } from "framer-motion";
+import Skill from "./Skill";
 
 const Stack = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    threshold: 0.1,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
   return (
     <section id="stack" className="overflow-hidden">
       <div className="mx-auto max-w-[250px] text-center">
-        <h2 className="mb-10 text-7xl font-bold text-gray-600 dark:text-gray-200">
-          My Stack
-        </h2>
-        <div className="grid gap-8 overflow-hidden" ref={ref}>
-          {stackItems.map((item, index) => (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-16 text-center"
+        >
+          <h2 className="mb-4 text-4xl font-bold md:text-5xl">
+            My <span className="text-primary">Stack</span>
+          </h2>
+          <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
+            Skill yang saya kuasai
+          </p>
+        </motion.div>
+      </div>
+      {/* <div className="grid gap-8 overflow-hidden" ref={ref}>
+          {SKILLS.map((item, index) => (
             <motion.div
-              key={item.id}
+              key={item.name}
               custom={index}
               initial="hidden"
               animate={controls}
               variants={itemVariants}
               className="flex flex-row items-center justify-center overflow-hidden rounded-xl bg-gray-200/30 p-4 shadow-lg hover:shadow-2xl dark:bg-white/10"
             >
-              <div className={`mb-4 ${item.color}`}>{item.icon}</div>
+              <div className={`mb-4`}>
+                {<item.Icon color={item.color} size={100} />}
+              </div>
               <div>
                 <p className="rotate-[-90deg] transform text-3xl whitespace-nowrap text-gray-400/40 dark:text-white/20">
                   {item.name}
@@ -102,8 +43,8 @@ const Stack = () => {
               </div>
             </motion.div>
           ))}
-        </div>
-      </div>
+        </div> */}
+      <Skill />
     </section>
   );
 };
