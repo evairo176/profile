@@ -6,7 +6,7 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const nextConfig: NextConfig = {
   i18n: {
     locales: ["en", "id"],
-    defaultLocale: "en",
+    defaultLocale: "id",
   },
 };
 

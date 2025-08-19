@@ -16,15 +16,6 @@ const dm_sans = DM_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-// ---- Type gtag (letakkan di file d.ts global project mu kalau mau permanen) ----
-declare global {
-  interface Window {
-    dataLayer: any[];
-    gtag: (...args: any[]) => void;
-  }
-}
-// -----------------------------------------------------------------------------
-
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const { locale = "id", locales = [], asPath } = router;

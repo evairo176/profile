@@ -14,7 +14,7 @@ class MyDocument extends Document<{ locale?: string }> {
   }
   render() {
     return (
-      <Html lang={this.props.locale || "en"}>
+      <Html lang={this.props.locale || "id"}>
         <Head />
         <body>
           <Main />
