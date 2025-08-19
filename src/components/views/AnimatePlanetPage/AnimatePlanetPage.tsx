@@ -11,10 +11,12 @@ import AnimatePlanetPageLayout from "@/components/layouts/AnimatePlanetPageLayou
 import LogoTicker from "./LogoTicker";
 import Contact from "./Contact";
 import Experiences from "./Experiences";
+import Seo from "./Seo";
 
 const LandingPage = () => {
   return (
     <AnimatePlanetPageLayout title="Home">
+      <Seo />
       <Hero />
       <LogoTicker />
       <About />

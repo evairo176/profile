@@ -8,10 +8,12 @@ import Contact from "./Contact";
 
 import AnimateChangeColorPageLayout from "@/components/layouts/AnimateChangeColorPageLayout";
 import Footer from "./Footer";
+import Seo from "./Seo";
 
 const AnimateChangeColorPage = () => {
   return (
     <AnimateChangeColorPageLayout title="Home">
+      <Seo />
       <Hero />
       <About />
       <LogoTicker />

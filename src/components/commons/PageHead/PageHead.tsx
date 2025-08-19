@@ -1,66 +1,7 @@
 // components/PageHead.tsx
+import { PageHeadProps } from "@/types/page-head";
 import Head from "next/head";
 import React from "react";
-
-type OpenGraph = {
-  type?: "website" | "article" | "profile" | "product" | string;
-  title?: string;
-  description?: string;
-  url?: string;
-  images?: Array<{
-    url: string;
-    width?: number;
-    height?: number;
-    alt?: string;
-  }>;
-  siteName?: string;
-};
-
-type Twitter = {
-  card?: "summary" | "summary_large_image" | "app" | "player";
-  site?: string; // @handle
-  creator?: string; // @handle
-};
-
-type Robots = {
-  index?: boolean;
-  follow?: boolean;
-  noarchive?: boolean;
-  nosnippet?: boolean;
-  noimageindex?: boolean;
-  nocache?: boolean;
-  maxSnippet?: number;
-  maxImagePreview?: "none" | "standard" | "large";
-  maxVideoPreview?: number;
-};
-
-type Props = {
-  /** Judul halaman. Jika pakai titleTemplate, ini akan dijadikan %s */
-  title?: string;
-  /** Pola judul, contoh: "%s | Acara" */
-  titleTemplate?: string;
-  /** Jika tidak ada title, pakai defaultTitle */
-  defaultTitle?: string;
-  /** Meta description */
-  description?: string;
-  /** Canonical URL */
-  canonical?: string;
-  /** Open Graph */
-  openGraph?: OpenGraph;
-  /** Twitter card */
-  twitter?: Twitter;
-  /** Robots meta */
-  robots?: Robots;
-  /** JSON-LD structured data */
-  jsonLd?: Record<string, any> | Record<string, any>[];
-  /** Tambahan meta atau link bila perlu */
-  additionalMetaTags?: Array<{
-    name?: string;
-    property?: string;
-    content: string;
-  }>;
-  additionalLinkTags?: Array<React.LinkHTMLAttributes<HTMLLinkElement>>;
-};
 
 const joinTitle = (title?: string, tpl?: string, fallback?: string) => {
   const base = title || fallback;
@@ -68,7 +9,7 @@ const joinTitle = (title?: string, tpl?: string, fallback?: string) => {
   return tpl ? tpl.replace("%s", base) : base;
 };
 
-const PageHead: React.FC<Props> = ({
+const PageHead: React.FC<PageHeadProps> = ({
   title,
   titleTemplate,
   defaultTitle = "Acara",
