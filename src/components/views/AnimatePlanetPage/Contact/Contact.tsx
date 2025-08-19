@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const Contact = () => {
+  const t = useTranslations("contact");
   return (
     <section
       id="contact"
@@ -22,8 +24,10 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-7xl font-bold text-gray-600 dark:text-gray-300"
           >
-            Get in{" "}
-            <span className="text-purple-600 dark:text-purple-500">touch</span>
+            {t("title.base")}
+            <span className="text-purple-600 dark:text-purple-500">
+              {t("title.highlight")}
+            </span>
           </motion.h2>
 
           <motion.div
@@ -34,40 +38,41 @@ const Contact = () => {
           >
             <div className="space-y-2">
               <p className="text-lg text-purple-600 dark:text-purple-300">
-                Phone
+                {t("phone.label")}
               </p>
               <a
-                href="tel:+999999999"
+                href={t("phone.href")}
                 className="flex items-center gap-2 text-2xl font-semibold transition duration-300 hover:text-gray-600 dark:hover:text-gray-400"
               >
-                +99 (0) 99 999 999
+                {t("phone.display")}
                 <span className="text-purple-600 dark:text-purple-500">↗</span>
               </a>
             </div>
 
             <div className="space-y-2">
               <p className="text-lg text-purple-600 dark:text-purple-300">
-                Email
+                {t("email.label")}
               </p>
               <a
-                href="mailto:john@doe.com"
+                href={t("email.href")}
                 className="flex items-center gap-2 text-3xl font-semibold transition duration-300 hover:text-gray-600 lg:text-4xl dark:hover:text-gray-400"
               >
-                john@doe.com
+                {t("email.display")}
                 <span className="text-purple-600 dark:text-purple-500">↗</span>
               </a>
             </div>
 
             <div className="space-y-2">
               <p className="text-lg text-purple-600 dark:text-purple-300">
-                Office
+                {t("office.label")}
               </p>
               <address className="text-xl leading-relaxed text-gray-700 not-italic dark:text-gray-300">
-                Keizersgracht 520, 1017EK
+                {t("office.line1")}
                 <br />
-                Amsterdam
+                {t("office.line2")}
                 <br />
-                The Netherlands
+                {t("office.line3")}
+                <br />
               </address>
             </div>
           </motion.div>
@@ -80,7 +85,7 @@ const Contact = () => {
           className="h-full min-h-[400px] w-full overflow-hidden rounded-2xl"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.5788316086147!2d4.8906773!3d52.3660809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609c19bcaa879%3A0x3b86a376ef9a0a98!2sKeizersgracht%20520%2C%201017%20EK%20Amsterdam!5e0!3m2!1sen!2snl!4v1647355453979!5m2!1sen!2snl"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63450.954117663314!2d107.90958060148138!3d-6.305101383051063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e694e81a2f8895f%3A0xf5942b441482d61!2sKec.%20Sukra%2C%20Kabupaten%20Indramayu%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1755592235095!5m2!1sid!2sid"
             width="100%"
             height="100%"
             style={{ border: 0 }}

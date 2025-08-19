@@ -2,39 +2,7 @@
 
 import React from "react";
 import { motion, useInView } from "framer-motion";
-
-const metrics = [
-  {
-    id: 1,
-    value: "5+",
-    label: "Year of Experience",
-    description: "Dedicated to full-stack development",
-  },
-  {
-    id: 2,
-    value: "50+",
-    label: "Projects Completed",
-    description: "From small applications to complex web platforms",
-  },
-  {
-    id: 3,
-    value: "10+",
-    label: "Technologies Mastered",
-    description: "Proficient in various programming languages and frameworks",
-  },
-  {
-    id: 4,
-    value: "100%",
-    label: "Code Quality",
-    description: "Committed to writting clean, efficient, and maintable code",
-  },
-  {
-    id: 5,
-    value: "1000+",
-    label: "Commits on Github",
-    description: "Active contributor to open-source and personal projects",
-  },
-];
+import { useTranslations } from "next-intl";
 
 interface Metric {
   id: number;
@@ -44,11 +12,14 @@ interface Metric {
 }
 
 const KeyMetrics: React.FC = () => {
+  const t = useTranslations("keyMetrics");
+  const metrics = t.raw("metrics") as Metric[]; // ← ambil array dari JSON
   const ref = React.useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: false });
 
   return (
     <motion.section
+      id="key-metrics"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -60,7 +31,7 @@ const KeyMetrics: React.FC = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         className="mb-12 text-6xl font-bold"
       >
-        KEY METRICS
+        {t("title")}
       </motion.h2>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

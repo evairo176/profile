@@ -1,13 +1,15 @@
 "use client";
-import React from "react";
+import React, { use } from "react";
 
 import { motion } from "framer-motion";
 import Skill from "./Skill";
+import { useTranslations } from "next-intl";
 
 const Stack = () => {
+  const t = useTranslations("stack");
   return (
     <section id="stack" className="overflow-hidden">
-      <div className="mx-auto max-w-[250px] text-center">
+      <div className="text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -16,10 +18,10 @@ const Stack = () => {
           className="mb-16 text-center"
         >
           <h2 className="mb-4 text-4xl font-bold md:text-5xl">
-            My <span className="text-primary">Stack</span>
+            {t("title")} <span className="text-primary">{t("subtitle")} </span>
           </h2>
           <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
-            Skill yang saya kuasai
+            {t("description")}
           </p>
         </motion.div>
       </div>

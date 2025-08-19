@@ -27,6 +27,7 @@ const Navbar = () => {
       { title: t("experience"), path: "#experience" },
       { title: t("portfolio"), path: "#portfolio" },
       { title: t("stack"), path: "#stack" },
+      { title: t("keyMetrics"), path: "#key-metrics" },
       { title: t("services"), path: "#services" },
       { title: t("contact"), path: "#contact" },
     ],

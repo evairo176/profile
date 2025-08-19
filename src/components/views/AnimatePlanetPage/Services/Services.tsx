@@ -1,42 +1,9 @@
+import { useTranslations } from "next-intl";
+
 const Services = () => {
-  const services = [
-    {
-      id: "01",
-      title: "Full-Stack Web Development",
-      description:
-        "Building robust, scalable web applications from front-end to back-end, ensuring seamless functionality and user experience.",
-    },
-    {
-      id: "02",
-      title: "API Development",
-      description:
-        "Designing and implementing RESTful APIs to enable efficient communication between different software systems and services.",
-    },
-    {
-      id: "03",
-      title: "Database Design & Management",
-      description:
-        "Creating efficient database structures and managing data flow to ensure optimal performance and data integrity.",
-    },
-    {
-      id: "04",
-      title: "Cloud Integration",
-      description:
-        "Leveraging cloud technologies to deploy, scale, and manage applications, ensuring high availability and cost-effectiveness.",
-    },
-    {
-      id: "05",
-      title: "DevOps & CI/CD",
-      description:
-        "Implementing continuous integration and deployment pipelines to streamline development processes and improve code quality.",
-    },
-    {
-      id: "06",
-      title: "Performance Optimization",
-      description:
-        "Analyzing and optimizing application performance to ensure fast load times and smooth user interactions across all devices.",
-    },
-  ];
+  const t = useTranslations("services");
+  const title = t("title");
+  const services = t.raw("items");
 
   return (
     <section
@@ -45,12 +12,12 @@ const Services = () => {
     >
       <div className="w-full pr-8 md:w-1/4">
         <h2 className="relative text-6xl font-extrabold md:sticky md:top-20">
-          SERVICES
+          {title}
         </h2>
       </div>
 
       <div className="w-full md:w-3/4">
-        {services.map((service) => (
+        {services.map((service: any) => (
           <div key={service.id} className="mb-16 flex items-start">
             <div className="mr-6 text-5xl font-bold text-purple-600 dark:text-purple-400">
               {service.id}

@@ -18,7 +18,8 @@
     "contact": "Kontak",
     "stack": "Teknologi",
     "portfolio": "Projek",
-    "services": "Layanan"
+    "services": "Layanan",
+    "keyMetrics": "Metrik Utama"
   },
   "about": {
     "title_1": "Tentang",
@@ -151,5 +152,129 @@
         "year": "2023"
       }
     }
+  },
+  "stack": {
+    "title": "My",
+    "subtitle": "Tech Stack",
+    "description": "Saya memiliki pengalaman dengan berbagai teknologi, termasuk:"
+  },
+  "keyMetrics": {
+    "title": "Metrik Utama",
+    "metrics": [
+      {
+        "id": 1,
+        "value": "3+",
+        "label": "Tahun Pengalaman",
+        "description": "Fokus pada pengembangan full-stack"
+      },
+      {
+        "id": 2,
+        "value": "15+",
+        "label": "Proyek Selesai",
+        "description": "Dari aplikasi kecil hingga platform web yang kompleks"
+      },
+      {
+        "id": 3,
+        "value": "10+",
+        "label": "Teknologi Dikuasai",
+        "description": "Mahir di berbagai bahasa pemrograman dan framework"
+      },
+      {
+        "id": 4,
+        "value": "100%",
+        "label": "Kualitas Kode",
+        "description": "Berkomitmen menulis kode yang bersih, efisien, dan mudah dirawat"
+      },
+      {
+        "id": 5,
+        "value": "1000+",
+        "label": "Commit di GitHub",
+        "description": "Kontributor aktif untuk open-source dan proyek pribadi"
+      }
+    ]
+  },
+  "services": {
+    "title": "Layanan",
+    "items": [
+      {
+        "id": "01",
+        "title": "Pengembangan Web Full-Stack",
+        "description": "Membangun aplikasi web yang tangguh dan dapat diskalakan dari sisi front-end hingga back-end, memastikan fungsionalitas dan pengalaman pengguna yang mulus."
+      },
+      {
+        "id": "02",
+        "title": "Pengembangan API",
+        "description": "Merancang dan mengimplementasikan API RESTful untuk memungkinkan komunikasi yang efisien antar sistem dan layanan perangkat lunak."
+      },
+      {
+        "id": "03",
+        "title": "Perancangan & Manajemen Basis Data",
+        "description": "Menciptakan struktur basis data yang efisien serta mengelola aliran data untuk memastikan kinerja optimal dan integritas data."
+      },
+      {
+        "id": "04",
+        "title": "Integrasi Cloud",
+        "description": "Memanfaatkan teknologi cloud untuk melakukan deployment, skala, dan manajemen aplikasi, memastikan ketersediaan tinggi dan efisiensi biaya."
+      },
+      {
+        "id": "05",
+        "title": "DevOps & CI/CD",
+        "description": "Menerapkan pipeline integrasi dan pengiriman berkelanjutan untuk memperlancar proses pengembangan dan meningkatkan kualitas kode."
+      },
+      {
+        "id": "06",
+        "title": "Optimasi Performa",
+        "description": "Menganalisis dan mengoptimalkan performa aplikasi agar waktu muat cepat dan interaksi pengguna mulus di semua perangkat."
+      }
+    ]
+  },
+  "contact": {
+    "title": { "base": "Hubungi ", "highlight": "saya" },
+    "phone": {
+      "label": "Telepon",
+      "display": "+62 81389003413",
+      "href": "tel:+6281389003413"
+    },
+    "email": {
+      "label": "Email",
+      "display": "dickiprasetya176@gmail.com",
+      "href": "mailto:dickiprasetya176@gmail.com"
+    },
+    "office": {
+      "label": "Jl cilandak lor blok candra",
+      "line1": "Indramayu",
+      "line2": "Jawa Barat",
+      "line3": "Indonesia"
+    }
+  },
+  "footer": {
+    "brand": "DICKIP",
+    "sections": {
+      "contact": {
+        "title": "Kontak",
+        "phone": "+62 81389003413",
+        "email": "dickiprasetya176@gmail.com"
+      },
+      "links": {
+        "title": "Tautan Berguna",
+        "items": [
+          { "label": "Beranda", "href": "#" },
+          { "label": "Halaman 404", "href": "#" },
+          { "label": "Lisensi", "href": "#" }
+        ]
+      },
+      "social": {
+        "title": "Sosial",
+        "items": [
+          { "label": "Github", "href": "https://github.com/evairo176" },
+          { "label": "X", "href": "#" },
+          {
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/in/dicki-prasetya-3a7587195"
+          }
+        ]
+      }
+    },
+    "copyright": "© 2025. Hak cipta dilindungi."
   }
 }

@@ -19,7 +19,8 @@
     "contact": "Contact",
     "stack": "Stack",
     "portfolio": "Portfolio",
-    "services": "Services"
+    "services": "Services",
+    "keyMetrics": "Key Metrics"
   },
   "about": {
     "title_1": "About",
@@ -153,5 +154,129 @@
         "year": "2023"
       }
     }
+  },
+  "stack": {
+    "title": "My",
+    "subtitle": "Tech Stack",
+    "description": "I have experience with a wide range of technologies, including:"
+  },
+  "keyMetrics": {
+    "title": "Key Metrics",
+    "metrics": [
+      {
+        "id": 1,
+        "value": "3+",
+        "label": "Years of Experience",
+        "description": "Dedicated to full-stack development"
+      },
+      {
+        "id": 2,
+        "value": "15+",
+        "label": "Projects Completed",
+        "description": "From small applications to complex web platforms"
+      },
+      {
+        "id": 3,
+        "value": "10+",
+        "label": "Technologies Mastered",
+        "description": "Proficient in various programming languages and frameworks"
+      },
+      {
+        "id": 4,
+        "value": "100%",
+        "label": "Code Quality",
+        "description": "Committed to writing clean, efficient, and maintainable code"
+      },
+      {
+        "id": 5,
+        "value": "1000+",
+        "label": "Commits on GitHub",
+        "description": "Active contributor to open-source and personal projects"
+      }
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "items": [
+      {
+        "id": "01",
+        "title": "Full-Stack Web Development",
+        "description": "Building robust, scalable web applications from front-end to back-end, ensuring seamless functionality and user experience."
+      },
+      {
+        "id": "02",
+        "title": "API Development",
+        "description": "Designing and implementing RESTful APIs to enable efficient communication between different software systems and services."
+      },
+      {
+        "id": "03",
+        "title": "Database Design & Management",
+        "description": "Creating efficient database structures and managing data flow to ensure optimal performance and data integrity."
+      },
+      {
+        "id": "04",
+        "title": "Cloud Integration",
+        "description": "Leveraging cloud technologies to deploy, scale, and manage applications, ensuring high availability and cost-effectiveness."
+      },
+      {
+        "id": "05",
+        "title": "DevOps & CI/CD",
+        "description": "Implementing continuous integration and deployment pipelines to streamline development processes and improve code quality."
+      },
+      {
+        "id": "06",
+        "title": "Performance Optimization",
+        "description": "Analyzing and optimizing application performance to ensure fast load times and smooth user interactions across all devices."
+      }
+    ]
+  },
+  "contact": {
+    "title": { "base": "Get in ", "highlight": "touch" },
+    "phone": {
+      "label": "Phone",
+      "display": "+62 81389003413",
+      "href": "tel:+6281389003413"
+    },
+    "email": {
+      "label": "Email",
+      "display": "dickiprasetya176@gmail.com",
+      "href": "mailto:dickiprasetya176@gmail.com"
+    },
+    "office": {
+      "label": "Jl cilandak lor blok candra",
+      "line1": "Indramayu",
+      "line2": "Jawa Barat",
+      "line3": "Indonesia"
+    }
+  },
+  "footer": {
+    "brand": "DICKIP",
+    "sections": {
+      "contact": {
+        "title": "Contact Me",
+        "phone": "+62 81389003413",
+        "email": "dickiprasetya176@gmail.com"
+      },
+      "links": {
+        "title": "Useful links",
+        "items": [
+          { "label": "Home", "href": "#" },
+          { "label": "404 Page", "href": "#" },
+          { "label": "Licensing", "href": "#" }
+        ]
+      },
+      "social": {
+        "title": "Social",
+        "items": [
+          { "label": "Github", "href": "https://github.com/evairo176" },
+          { "label": "X", "href": "#" },
+          {
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/in/dicki-prasetya-3a7587195"
+          }
+        ]
+      }
+    },
+    "copyright": "© 2025. All rights reserved."
   }
 }
