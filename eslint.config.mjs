@@ -11,13 +11,15 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
-    // Turn the rule off just for i18n files
-    {
-      files: ["src/i18n/**/*.{ts,tsx}"],
-      rules: {
-        "@typescript-eslint/no-explicit-any": "off",
-      },
+  {
+    rules: {
+      "@typescript-eslint/no-explicit-any": "off",
     },
+  },
+  // Turn the rule off just for i18n files
+  {
+    files: ["src/i18n/**/*.{ts,tsx}"],
+  },
 ];
 
 export default eslintConfig;

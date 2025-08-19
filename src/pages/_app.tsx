@@ -7,8 +7,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect } from "react";
-
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+import environment from "@/config/environment";
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
@@ -19,10 +18,10 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   useEffect(() => {
-    if (!GA_ID) return;
+    if (!environment.GA_ID) return;
     const handleRouteChange = (url: string) => {
       // kirim pageview ke GA4 setiap navigasi client-side
-      window.gtag?.("config", GA_ID, { page_path: url });
+      window.gtag?.("config", environment.GA_ID, { page_path: url });
     };
     router.events.on("routeChangeComplete", handleRouteChange);
     router.events.on("hashChangeComplete", handleRouteChange);
@@ -45,10 +44,10 @@ export default function App({ Component, pageProps }: AppProps) {
       >
         <main className={cn(dm_sans.className)}>
           {/* Muat library gtag */}
-          {GA_ID && process.env.NODE_ENV === "production" && (
+          {environment.GA_ID && process.env.NODE_ENV === "production" && (
             <>
               <Script
-                src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+                src={`https://www.googletagmanager.com/gtag/js?id=${environment.GA_ID}`}
                 strategy="afterInteractive"
               />
               <Script id="gtag-init" strategy="afterInteractive">
@@ -57,7 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               // pageview pertama
-              gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+              gtag('config', '${environment.GA_ID}', { page_path: window.location.pathname });
             `}
               </Script>
             </>
